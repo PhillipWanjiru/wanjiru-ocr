@@ -1,0 +1,17 @@
+[package]
+name = "wanjiru-barcode"
+description = "Barcode and QR decoding with cross-checks against printed text"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+authors.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+wanjiru-types = { workspace = true }
+wanjiru-imgproc = { workspace = true }
+wanjiru-docir = { workspace = true }

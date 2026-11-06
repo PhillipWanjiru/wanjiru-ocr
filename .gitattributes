@@ -1,0 +1,14 @@
+# Line endings are part of the bit-exact contract: golden files and canonical JSON are LF everywhere.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.tif binary
+*.tiff binary
+*.pdf binary
+*.onnx binary
+*.zip binary
+
+# Golden and fixture data must never be rewritten by a checkout filter.
+eval/fixtures/** -text
+crates/*/tests/golden/** -text

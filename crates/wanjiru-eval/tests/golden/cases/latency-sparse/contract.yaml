@@ -1,0 +1,15 @@
+contract: invoice-oracle
+class: invoice
+status: draft
+corpus: golden/invoice-oracle
+metrics:
+  field_exact_match:
+    total_amount: {kind: amount, min: 0.99, coverage: 0.9}
+    issue_date: {kind: date, min: 0.99, coverage: 0.9}
+    iban: {min: 0.995, coverage: 0.8}
+  ece_char: {max: 0.02}
+  conformal: {alpha: 0.01, coverage_tolerance: 0.01}
+  latency_ms: {p50_max: 1000, p95_max: 2500}
+gates:
+  regression_budget_cer_rel: 0.02
+  confidence_interval: bootstrap-by-document

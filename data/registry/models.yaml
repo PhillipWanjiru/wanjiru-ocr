@@ -1,0 +1,14 @@
+# Model register (ADR-003, ADR-006, ADR-009).
+#
+# One row for every model the project ships, tests against or trains from, including models used only as
+# teachers: a model's weights inherit the terms of its training data and of its teachers. A model that is
+# not here is not used. Weights are not in the repository; the package manifests are (models/).
+#
+# A row names the model's source and version, its licence and what the licence permits, the data it was
+# trained on, and its calibrator (ADR-006: no calibrator, no confidences). `verified: false` means the
+# licence has not been checked against its source; an unverified row cannot be part of a release.
+#
+# Phase 1 uses no model. The first rows arrive in Phase 3 with the baseline recogniser.
+schema: wanjiru.registry.models/0
+
+models: {}

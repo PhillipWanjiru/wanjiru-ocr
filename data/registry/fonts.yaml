@@ -1,0 +1,15 @@
+# Font register (ADR-009).
+#
+# One row for every font used to render synthetic text for training or testing. A font's licence can
+# forbid embedding it in generated images or redistributing them, so the licence is read before the font is
+# used, not after. A font that is not here is not used. Font files are not in the repository.
+#
+# A row names the family, the version and source, the licence, the scripts it covers (the scripts of the
+# plan come first: Latin with accents, then extended Latin, Cyrillic and Greek, then Arabic) and whether
+# the licence allows rendering into images that are published. `verified: false` means the licence has not
+# been read at the source.
+#
+# Phase 1 uses no font. The first rows arrive in Phase 4 with the synthetic data engine.
+schema: wanjiru.registry.fonts/0
+
+fonts: {}

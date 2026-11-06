@@ -1,0 +1,6 @@
+# Pinned stable toolchain. Changing it is a reviewed change: run the full suite and record the new
+# bit-exact hashes (tests/determinism, from Phase 2) in the same commit.
+[toolchain]
+channel = "1.97.0"
+components = ["clippy", "rustfmt"]
+profile = "minimal"

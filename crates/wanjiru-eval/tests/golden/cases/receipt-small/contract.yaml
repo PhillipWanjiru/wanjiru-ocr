@@ -1,0 +1,14 @@
+contract: receipt-oracle
+class: receipt
+status: draft
+corpus: golden/receipt-oracle
+metrics:
+  field_exact_match:
+    total: {kind: amount, min: 0.98, coverage: 0.9}
+    date: {min: 0.98, coverage: 0.9}
+  ece_char: {max: 0.02}
+  conformal: {alpha: 0.01, coverage_tolerance: 0.01}
+  latency_ms: {p50_max: 1000, p95_max: 2500}
+gates:
+  regression_budget_cer_rel: 0.02
+  confidence_interval: bootstrap-by-document

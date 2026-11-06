@@ -1,0 +1,29 @@
+$ wanjiru eval --contract eval/contracts/invoice-fields-v1.yaml --truth eval/fixtures/synthetic-v0/truth.jsonl --pred eval/fixtures/synthetic-v0/predictions.jsonl --baseline eval/fixtures/synthetic-v0/baseline.jsonl
+# exit code 3
+
+wanjiru eval: invoice-fields-v1 (draft), corpus golden/invoices-v0
+documents: 120 of class invoice, 120 with output, baseline has output for 120
+intervals: 95.0 %, bootstrap-t, 2000 resamples, seed 1
+
+character error rate: 0.0047 [0.0032, 0.0066] (39 edits / 8376 characters, 120 documents)
+field iban (iban): accuracy 1.0000 [0.9661, 1.0000] (107/107), coverage 0.9386 [0.8776, 0.9750] (107/114); reviewed 2, absent 5, accepted invalid 0, accepted without truth 0
+field issue_date (date): accuracy 1.0000 [0.9658, 1.0000] (106/106), coverage 0.9138 [0.8472, 0.9579] (106/116); reviewed 1, absent 9, accepted invalid 0, accepted without truth 1
+field total_amount (amount): accuracy 1.0000 [0.9670, 1.0000] (110/110), coverage 0.9565 [0.9015, 0.9857] (110/115); reviewed 2, absent 3, accepted invalid 0, accepted without truth 0
+latency ms: p50 243.5 [216.2, 268.2], p95 505.4 [418.4, 671.6] (n = 120)
+change in errors against the baseline: -0.8678 [-0.9168, -0.7944] (39 edits against 295)
+
+gates:
+  inconclusive  field_exact_match.iban.min                 >= 0.9990    1.0000 [0.9661, 1.0000]
+  inconclusive  field_exact_match.iban.coverage            >= 0.9000    0.9386 [0.8776, 0.9750]
+  inconclusive  field_exact_match.issue_date.min           >= 0.9950    1.0000 [0.9658, 1.0000]
+  inconclusive  field_exact_match.issue_date.coverage      >= 0.9500    0.9138 [0.8472, 0.9579]
+  inconclusive  field_exact_match.total_amount.min         >= 0.9950    1.0000 [0.9670, 1.0000]
+  inconclusive  field_exact_match.total_amount.coverage    >= 0.9500    0.9565 [0.9015, 0.9857]
+  not_measured  ece_char.max                               <= 0.0200    n/a [-inf, +inf]  (calibration of character confidences is measured from Phase 6)
+  not_measured  conformal.coverage                         >= 0.9800    n/a [-inf, +inf]  (conformal coverage is measured from Phase 6)
+  pass          latency_ms.p50_max                         <= 1000.0000 243.5200 [216.2000, 268.2400]
+  pass          latency_ms.p95_max                         <= 2500.0000 505.3930 [418.3500, 671.6300]
+  pass          gates.regression_budget_cer_rel            <= 0.0200    -0.8678 [-0.9168, -0.7944]
+
+verdict: inconclusive
+report sha256: 928831051169aba48ddf0db83f3d8da98468e44c65e8f4597f127385f4ef7ad2

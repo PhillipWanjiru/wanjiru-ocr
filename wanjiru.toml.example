@@ -1,0 +1,15 @@
+# Wanjiru System: an example configuration file.
+#
+# NOTHING READS THIS FILE YET. Configuration arrives with the engine in Phase 3. The values below are the
+# defaults that exist in the code today, so that the file cannot promise anything the code does not do.
+# The keys and the layout are not a commitment: they will change when a reader for the file is written, and
+# that change will be in the changelog.
+#
+# Today everything is set by command-line flags: `wanjiru help`.
+
+[eval]
+# `wanjiru eval`. The same names as the flags --level, --resamples, --seed and --method.
+level = 0.95            # the confidence level of every interval
+resamples = 2000        # bootstrap resamples; more cost time and reduce the noise of the simulation
+seed = 1                # the random stream is fixed by this, so a report can be reproduced exactly
+method = "bootstrap-t"  # or "percentile"; bootstrap-t covers better on short corpora (docs/lab/2026-10-29.md)

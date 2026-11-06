@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:wanjiru:docir:0",
+  "title": "Wanjiru DocIR v0",
+  "description": "The single result type of the Wanjiru System engine (ADR-004): pages, lines, words and typed fields, each with a confidence and a provenance. All geometry is in source pixels (origin top-left, y down). v0 is a draft: it may change until Gate G1 (week 18). Structure is checked here; cross-references (unique ids, evidence pages, connected chains) and value syntax are checked by wanjiru-docir itself.",
+  "type": "object",
+  "required": ["schema", "id", "class", "source", "pages", "fields", "run"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "wanjiru.docir/0" },
+    "id": { "type": "string", "minLength": 1, "maxLength": 256 },
+    "class": { "enum": ["invoice", "receipt", "id", "other"] },
+    "source": { "$ref": "#/$defs/source" },
+    "pages": { "type": "array", "items": { "$ref": "#/$defs/page" } },
+    "fields": { "type": "array", "items": { "$ref": "#/$defs/field" } },
+    "run": { "$ref": "#/$defs/run" }
+  },
+  "$defs": {
+    "sha256": {
+      "description": "64 lower-case hexadecimal digits; the digit check is made by wanjiru-docir.",
+      "type": "string",
+      "minLength": 64,
+      "maxLength": 64
+    },
+    "identifier": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "point": {
+      "description": "[x, y] in source pixels.",
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "type": "number" }
+    },
+    "polygon": {
+      "description": "A closed polygon with at least three vertices.",
+      "type": "array",
+      "minItems": 3,
+      "items": { "$ref": "#/$defs/point" }
+    },
+    "confidence": {
+      "type": "object",
+      "required": ["value", "calibrated"],
+      "additionalProperties": false,
+      "properties": {
+        "value": { "type": "number", "minimum": 0, "maximum": 1 },
+        "calibrated": { "type": "boolean" }
+      }
+    },
+    "frame": { "enum": ["source", "page", "line", "pdf", "normalised"] },
+    "affine_step": {
+      "type": "object",
+      "required": ["to", "kind", "matrix"],
+      "additionalProperties": false,
+      "properties": {
+        "to": { "$ref": "#/$defs/frame" },
+        "kind": { "const": "affine" },
+        "matrix": {
+          "description": "[xx, yx, xy, yy, tx, ty]: x' = xx x + xy y + tx, y' = yx x + yy y + ty.",
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": { "type": "number" }
+        }
+      }
+    },
+    "homography_step": {
+      "type": "object",
+      "required": ["to", "kind", "matrix"],
+      "additionalProperties": false,
+      "properties": {
+        "to": { "$ref": "#/$defs/frame" },
+        "kind": { "const": "homography" },
+        "matrix": {
+          "description": "Row-major 3x3: [x', y', w'] = M [x, y, 1], result (x'/w', y'/w').",
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": { "type": "number" }
+        }
+      }
+    },
+    "step": {
+      "oneOf": [
+        { "$ref": "#/$defs/affine_step" },
+        { "$ref": "#/$defs/homography_step" }
+      ]
+    },
+    "chain": {
+      "description": "How the source image was mapped to the frames the models saw. Every page chain starts in the source frame.",
+      "type": "object",
+      "required": ["from", "steps"],
+      "additionalProperties": false,
+      "properties": {
+        "from": { "const": "source" },
+        "steps": { "type": "array", "items": { "$ref": "#/$defs/step" } }
+      }
+    },
+    "size": {
+      "type": "object",
+      "required": ["w", "h"],
+      "additionalProperties": false,
+      "properties": {
+        "w": { "type": "number", "exclusiveMinimum": 0 },
+        "h": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "word": {
+      "type": "object",
+      "required": ["text", "polygon", "confidence"],
+      "additionalProperties": false,
+      "properties": {
+        "text": { "type": "string" },
+        "polygon": { "$ref": "#/$defs/polygon" },
+        "confidence": { "$ref": "#/$defs/confidence" }
+      }
+    },
+    "line": {
+      "type": "object",
+      "required": ["id", "text", "polygon", "confidence", "words"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/identifier" },
+        "text": { "type": "string" },
+        "polygon": { "$ref": "#/$defs/polygon" },
+        "confidence": { "$ref": "#/$defs/confidence" },
+        "words": { "type": "array", "items": { "$ref": "#/$defs/word" } }
+      }
+    },
+    "page": {
+      "type": "object",
+      "required": ["index", "size", "chain", "lines"],
+      "additionalProperties": false,
+      "properties": {
+        "index": { "type": "integer", "minimum": 0 },
+        "size": { "$ref": "#/$defs/size" },
+        "chain": { "$ref": "#/$defs/chain" },
+        "lines": { "type": "array", "items": { "$ref": "#/$defs/line" } }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["page", "polygon", "text"],
+      "additionalProperties": false,
+      "properties": {
+        "page": { "type": "integer", "minimum": 0 },
+        "polygon": { "$ref": "#/$defs/polygon" },
+        "text": { "type": "string" }
+      }
+    },
+    "field": {
+      "type": "object",
+      "required": ["name", "kind", "value", "confidence", "decision", "evidence", "lines"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "$ref": "#/$defs/identifier" },
+        "kind": { "enum": ["amount", "date", "iban", "mrz", "text"] },
+        "value": { "type": "string", "minLength": 1 },
+        "currency": { "type": "string", "minLength": 3, "maxLength": 3 },
+        "confidence": { "$ref": "#/$defs/confidence" },
+        "decision": { "enum": ["accept", "review"] },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } },
+        "lines": { "type": "array", "items": { "$ref": "#/$defs/identifier" } }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["sha256", "media_type"],
+      "additionalProperties": false,
+      "properties": {
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "media_type": { "type": "string", "minLength": 3, "maxLength": 127 }
+      }
+    },
+    "run": {
+      "type": "object",
+      "required": ["engine", "config_sha256", "timing_ms"],
+      "additionalProperties": false,
+      "properties": {
+        "engine": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "config_sha256": { "$ref": "#/$defs/sha256" },
+        "timing_ms": {
+          "description": "Wall-clock milliseconds by stage; excluded from content_sha256.",
+          "type": "object",
+          "additionalProperties": { "type": "number", "minimum": 0 }
+        }
+      }
+    }
+  }
+}

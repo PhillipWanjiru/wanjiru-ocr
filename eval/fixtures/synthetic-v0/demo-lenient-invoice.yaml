@@ -1,0 +1,14 @@
+# A demonstration contract with thresholds a small corpus can meet: it passes on the synthetic fixtures.
+contract: demo-lenient-invoice
+class: invoice
+status: draft
+corpus: golden/demo-lenient-invoice
+metrics:
+  field_exact_match:
+    total_amount: {kind: amount, min: 0.9, coverage: 0.8}
+    issue_date: {kind: date, min: 0.9, coverage: 0.8}
+    iban: {min: 0.9, coverage: 0.7}
+  latency_ms: {p50_max: 1000, p95_max: 2500}
+gates:
+  regression_budget_cer_rel: 0.5
+  confidence_interval: bootstrap-by-document

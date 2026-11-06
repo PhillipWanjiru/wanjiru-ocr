@@ -1,0 +1,40 @@
+# Build output and tool caches
+/target/
+**/*.profraw
+**/__pycache__/
+*.pyc
+.venv/
+node_modules/
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# A real document never enters this repository (ADR-008, data/datasheets/golden-v0.md).
+# The golden set lives in a private data repository; only its manifest (hashes and metadata) is here.
+# These patterns are a second line of defence against a careless `git add .`, not the first.
+/eval/golden/**/*.png
+/eval/golden/**/*.jpg
+/eval/golden/**/*.jpeg
+/eval/golden/**/*.tif
+/eval/golden/**/*.tiff
+/eval/golden/**/*.pdf
+/eval/golden/**/*.heic
+/eval/golden/**/*.webp
+/eval/golden/private/
+/data/private/
+/research-data/
+
+# Model weights are large and carry their own licences: they are described in data/registry/models.yaml
+# and distributed as signed packages, not committed.
+/models/**/*.onnx
+/models/**/*.safetensors
+/models/**/*.bin
+
+# Local configuration
+/wanjiru.toml
+/.env
+/.env.*

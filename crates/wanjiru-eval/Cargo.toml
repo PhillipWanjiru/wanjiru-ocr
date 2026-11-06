@@ -1,0 +1,17 @@
+[package]
+name = "wanjiru-eval"
+description = "The evaluation harness: metrics, bootstrap intervals, gates and reports"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+authors.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+wanjiru-types = { workspace = true }
+wanjiru-math = { workspace = true }
+wanjiru-docir = { workspace = true }

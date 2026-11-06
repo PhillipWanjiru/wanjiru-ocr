@@ -1,0 +1,17 @@
+msrv = "1.85"
+allow-unwrap-in-tests = true
+allow-expect-in-tests = true
+allow-indexing-slicing-in-tests = true
+allow-print-in-tests = true
+too-many-lines-threshold = 150
+cognitive-complexity-threshold = 25
+doc-valid-idents = ["DocIR", "SplitMix64", "ECMAScript", "OCR", "MRZ", "IBAN", "ICAO", "JSONL", "PyYAML", "CER", "WER", "SHA-256", "UTF-16", "OpenCV", "SciPy", "NumPy", "RFC", ".."]
+
+# Determinism tiers (ADR-005): nothing that can change an output between two runs.
+disallowed-types = [
+    { path = "std::collections::HashMap", reason = "iteration order is randomised per process; use BTreeMap, or allow with a reason where only lookups are made" },
+    { path = "std::collections::HashSet", reason = "iteration order is randomised per process; use BTreeSet, or allow with a reason where only membership is tested" },
+]
+disallowed-methods = [
+    { path = "std::time::SystemTime::now", reason = "wall-clock time breaks reproducibility; take a clock as a parameter" },
+]

@@ -1,0 +1,16 @@
+[package]
+name = "wanjiru-codecs"
+description = "Image decoders, EXIF, ICC profiles and resource limits"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+authors.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+wanjiru-types = { workspace = true }
+wanjiru-imgproc = { workspace = true }

@@ -1,0 +1,19 @@
+[package]
+name = "wanjiru"
+description = "The facade: the stable public Rust API of the Wanjiru System"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+authors.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+wanjiru-types = { workspace = true }
+wanjiru-docir = { workspace = true }
+wanjiru-engine = { workspace = true }
+wanjiru-emit = { workspace = true }
+wanjiru-models = { workspace = true }

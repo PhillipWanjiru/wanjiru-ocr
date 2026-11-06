@@ -1,0 +1,106 @@
+# Licence register (ADR-007, ADR-009).
+#
+# The build enforces an allow-list: `cargo xtask licences` reads deny.toml and checks the whole dependency
+# graph, and cargo-deny does the same in CI. This file is the human side of that policy: why each licence
+# is allowed or refused, and one row for every outside component that a crate contract names before it is
+# adopted. Adding a dependency starts here: no row, no dependency.
+#
+# `verified: false` means nobody has yet read the licence text at the source, for the version that would
+# be used. An unverified row cannot be part of a release (ADR-009). Every row below is unverified: Phase 1
+# adopts no outside component, and the claims are what is believed, to be checked when the choice is made.
+#
+# The list of allowed licences must equal [licenses] allow in deny.toml; a test of wanjiru-cli compares them.
+schema: wanjiru.registry.licences/0
+
+licences:
+  Apache-2.0:
+    policy: allowed
+    note: The licence of this project's own code (ADR-009). Permissive, with an express patent grant.
+  MIT:
+    policy: allowed
+    note: Permissive.
+  BSD-2-Clause:
+    policy: allowed
+    note: Permissive.
+  BSD-3-Clause:
+    policy: allowed
+    note: Permissive; forbids using the authors' names to endorse a product.
+  ISC:
+    policy: allowed
+    note: Permissive, equivalent in effect to MIT.
+  Zlib:
+    policy: allowed
+    note: Permissive.
+  Unicode-3.0:
+    policy: allowed
+    note: The licence of the Unicode data files that text-handling crates embed.
+  MPL-2.0:
+    policy: review
+    note: File-level copyleft. Allowed as a dependency after a recorded review of which files it covers; not chosen for the project itself (ADR-009).
+  LGPL-3.0-only:
+    policy: denied
+    note: Not allowed in the engine. Linking obligations are hard to meet for a library that is embedded statically.
+  GPL-3.0-only:
+    policy: denied
+    note: Not allowed. Would make every embedder's product subject to the GPL.
+  AGPL-3.0-only:
+    policy: denied
+    note: Not allowed, including for components that are also offered under a commercial licence unless that licence is bought and recorded here.
+
+# Outside components that the crate contracts name as planned. None is adopted. Each becomes a row with
+# a version, a source and a verified licence when its ADR is accepted.
+candidates:
+  ort:
+    used_by: wanjiru-runtime
+    purpose: Rust binding to ONNX Runtime (ADR-003); direct onnxruntime-sys bindings are the alternative
+    licence_claimed: MIT OR Apache-2.0
+    verified: false
+    status: not adopted; decided by the follow-up to ADR-003 in Phase 3
+  onnxruntime:
+    used_by: wanjiru-runtime
+    purpose: the native library the binding loads (ADR-003)
+    licence_claimed: MIT
+    verified: false
+    status: not adopted; its third-party notices have to be collected for a release
+  pyo3:
+    used_by: wanjiru-py
+    purpose: Python extension module (Phase 8)
+    licence_claimed: MIT OR Apache-2.0
+    verified: false
+    status: not adopted; decided in Phase 8
+  pdfium:
+    used_by: wanjiru-pdf
+    purpose: PDF rasterisation and text-layer probes (Phase 2)
+    licence_claimed: Apache-2.0, with third-party components under their own notices
+    verified: false
+    status: candidate; decided by ADR against the allow-list in Phase 2
+  mupdf:
+    used_by: wanjiru-pdf
+    purpose: alternative PDF library (Phase 2)
+    licence_claimed: AGPL-3.0, or a commercial licence from its vendor
+    verified: false
+    status: refused unless a commercial licence is bought, because AGPL-3.0 is denied above
+  image-decoders:
+    used_by: wanjiru-codecs
+    purpose: decoders for PNG, JPEG, TIFF and further formats (Phase 2)
+    licence_claimed: unknown
+    verified: false
+    status: not chosen; one row per crate or library when chosen by ADR in Phase 2
+  sandbox-bindings:
+    used_by: wanjiru-worker
+    purpose: system-call filters and process isolation on each platform (Phase 2)
+    licence_claimed: unknown
+    verified: false
+    status: not chosen; one row per crate when chosen by ADR in Phase 2
+  signature-crate:
+    used_by: wanjiru-models
+    purpose: Ed25519 signatures for model packages (Phase 8)
+    licence_claimed: unknown
+    verified: false
+    status: not chosen; decided by ADR in Phase 8
+  http-server-crate:
+    used_by: wanjiru-server
+    purpose: a small HTTP server for the local service (Phase 8)
+    licence_claimed: unknown
+    verified: false
+    status: not chosen; decided by ADR in Phase 8

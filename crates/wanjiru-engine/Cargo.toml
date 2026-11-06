@@ -1,0 +1,29 @@
+[package]
+name = "wanjiru-engine"
+description = "The pipeline: stages, budgets, cancellation and the cascade"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+authors.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+wanjiru-types = { workspace = true }
+wanjiru-math = { workspace = true }
+wanjiru-docir = { workspace = true }
+wanjiru-imgproc = { workspace = true }
+wanjiru-codecs = { workspace = true }
+wanjiru-pdf = { workspace = true }
+wanjiru-barcode = { workspace = true }
+wanjiru-runtime = { workspace = true }
+wanjiru-models = { workspace = true }
+wanjiru-detect = { workspace = true }
+wanjiru-recognize = { workspace = true }
+wanjiru-decode = { workspace = true }
+wanjiru-fields = { workspace = true }
+wanjiru-layout = { workspace = true }
+wanjiru-calibrate = { workspace = true }

@@ -1,0 +1,20 @@
+# Quality contract for invoices. Read by `wanjiru eval`; see crates/wanjiru-eval/src/contract.rs.
+#
+# min       the share of accepted values that must be exactly right (lower end of the interval)
+# coverage  the share of documents in which the field must be accepted at all
+# Thresholds are the blueprint's (Chapter 31) and become binding when gate G1 freezes this file.
+contract: invoice-fields-v1
+class: invoice
+status: draft                       # draft until gate G1 (week 18) freezes it
+corpus: golden/invoices-v0          # frozen, versioned, split by document, never trained on
+metrics:
+  field_exact_match:
+    total_amount: {kind: amount, min: 0.995, coverage: 0.95}
+    issue_date:   {kind: date,   min: 0.995, coverage: 0.95}
+    iban:         {kind: iban,   min: 0.999, coverage: 0.90}
+  ece_char: {max: 0.02}             # measured from Phase 6
+  conformal: {alpha: 0.01, coverage_tolerance: 0.01}   # measured from Phase 6
+  latency_ms: {p50_max: 1000, p95_max: 2500}
+gates:
+  regression_budget_cer_rel: 0.02   # block a change that worsens CER by more than 2 % (relative)
+  confidence_interval: bootstrap-by-document

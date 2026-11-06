@@ -1,0 +1,17 @@
+[package]
+name = "wanjiru-fields"
+description = "Field schemas, the constraint library, extraction and cross-field rules"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+authors.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+wanjiru-types = { workspace = true }
+wanjiru-math = { workspace = true }
+wanjiru-docir = { workspace = true }

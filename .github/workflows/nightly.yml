@@ -1,0 +1,82 @@
+# Slow checks that do not belong on every push.
+#
+# STATUS: written, NOT YET RUN on GitHub (see ci.yml for what was and was not checked). The commands themselves
+# (the survey, the mutation check, the three oracle scripts) were run by hand in the development sandbox; the
+# wiring around them (setup actions, artifact upload) was not.
+name: nightly
+
+on:
+  schedule:
+    - cron: "41 1 * * *" # every day, 01:41 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: "0"
+
+jobs:
+  coverage-survey:
+    name: how often the intervals contain the truth (docs/lab/2026-10-29.md, section 2)
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install the toolchain pinned in rust-toolchain.toml
+        run: rustup toolchain install
+      - name: Run the survey (an ignored test, 4,000 corpora per cell)
+        run: |
+          set -o pipefail
+          cargo test --release -p wanjiru-eval --test coverage --locked -- --ignored --nocapture | tee coverage-survey.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coverage-survey
+          path: coverage-survey.txt
+
+  mutation-check:
+    name: the evaluation harness catches 17 planted faults
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install the toolchain pinned in rust-toolchain.toml
+        run: rustup toolchain install
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Plant each fault, run the tests, and fail on a survivor or a stale entry
+        run: python3 tools/oracles/mutants.py
+
+  oracles:
+    name: the oracles regenerate the vectors and the tests still pass
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install the toolchain pinned in rust-toolchain.toml
+        run: rustup toolchain install
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install the pinned oracle libraries
+        run: python3 -m pip install -r tools/oracles/requirements.txt
+      - name: Regenerate every golden vector in place
+        run: |
+          python3 -I tools/oracles/make_math_vectors.py
+          python3 -I tools/oracles/make_docir_vectors.py
+          python3 -I tools/oracles/make_eval_vectors.py
+      - name: What changed (informational; the tests below are the verdict)
+        run: git status --short
+      - name: The Rust tests against the regenerated vectors
+        run: cargo test --workspace --locked

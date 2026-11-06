@@ -1,0 +1,16 @@
+# Dependabot proposes updates; a person reviews them like any other change (CONTRIBUTING.md).
+# STATUS: written, not yet active (the repository is not on GitHub).
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+  - package-ecosystem: cargo
+    directory: /
+    schedule:
+      interval: weekly
+  - package-ecosystem: pip
+    directory: /tools/oracles
+    schedule:
+      interval: weekly

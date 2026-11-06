@@ -1,0 +1,11 @@
+Wanjiru System
+Copyright 2026 The Wanjiru System authors
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Third-party software: none is included in this distribution. Phase 1 uses the Rust standard library
+and no other library. Components planned for later phases are listed, with their licences and the state
+of their verification, in data/registry/licences.yaml; each is added to this file when it is adopted.
+
+Models and datasets are not covered by the licence of the code. Each carries its own terms, recorded in
+data/registry/models.yaml and data/registry/datasets.yaml (ADR-009).

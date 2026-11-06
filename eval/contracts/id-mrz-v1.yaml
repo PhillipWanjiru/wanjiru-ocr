@@ -1,0 +1,19 @@
+# Quality contract for identity documents with a machine-readable zone. PROPOSED thresholds: the MRZ has
+# check digits, so a wrong value that is accepted is much worse than a missing one; confirm at gate G1.
+# Fixtures and golden sets for this class are fictional or consented; a real identity document never
+# enters this repository (docs/adr/008-telemetry-and-consent.md).
+contract: id-mrz-v1
+class: id
+status: draft
+corpus: golden/ids-v0
+metrics:
+  field_exact_match:
+    mrz:             {kind: mrz,  min: 0.999, coverage: 0.95}
+    document_number: {kind: text, min: 0.995, coverage: 0.95}
+    date_of_expiry:  {kind: date, min: 0.995, coverage: 0.95}
+  ece_char: {max: 0.01}             # measured from Phase 6
+  conformal: {alpha: 0.005, coverage_tolerance: 0.005}  # measured from Phase 6
+  latency_ms: {p50_max: 1000, p95_max: 3000}
+gates:
+  regression_budget_cer_rel: 0.01
+  confidence_interval: bootstrap-by-document

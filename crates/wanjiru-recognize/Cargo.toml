@@ -1,0 +1,19 @@
+[package]
+name = "wanjiru-recognize"
+description = "Line rectification, the recogniser network wrapper and hypothesis generation"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+authors.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+wanjiru-types = { workspace = true }
+wanjiru-math = { workspace = true }
+wanjiru-docir = { workspace = true }
+wanjiru-imgproc = { workspace = true }
+wanjiru-runtime = { workspace = true }

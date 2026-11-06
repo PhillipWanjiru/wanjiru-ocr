@@ -1,0 +1,102 @@
+# Continuous integration for the Wanjiru System.
+#
+# STATUS: written, NOT YET RUN on GitHub. The environment that produced these files cannot reach GitHub, and the
+# published workflow schema could not be downloaded there either. So the files were parsed as YAML and checked
+# by a small structural script (shape of jobs and steps, matrix keys, cron fields, the repository paths that
+# commands name), which found one real error (a colon inside an unquoted step name). Nothing was executed:
+# expect the first run to find more.
+# Actions are referenced by major-version tag because their commit hashes could not be looked up from there:
+# on the first real run, pin each one by commit hash (a comment keeps the tag readable) and let Dependabot
+# propose the updates (.github/dependabot.yml).
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# A newer push to the same branch or pull request cancels the run in progress.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_BACKTRACE: "1"
+  # Incremental compilation only makes a cache bigger; CI builds from scratch.
+  CARGO_INCREMENTAL: "0"
+
+jobs:
+  lint:
+    name: format, lint and architecture checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install the toolchain pinned in rust-toolchain.toml
+        run: rustup toolchain install
+      - name: Versions
+        run: |
+          rustc --version
+          cargo --version
+      - name: Format
+        run: cargo fmt --all -- --check
+      - name: Clippy, warnings are errors
+        run: cargo clippy --workspace --all-targets --locked -- -D warnings
+      - name: Documentation builds without warnings
+        env:
+          RUSTDOCFLAGS: -D warnings
+        run: cargo doc --workspace --no-deps --locked
+      - name: Architecture checks (layers, contracts, unsafe policy, determinism, licences)
+        run: cargo xtask check
+
+  test:
+    name: test on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    # Linux gates the merge. macOS and Windows report, and are promoted to gating once each has passed:
+    # the golden files claim bit-identical results on every platform, and this is the first time that is tested.
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            experimental: false
+          - os: macos-latest
+            experimental: true
+          - os: windows-latest
+            experimental: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install the toolchain pinned in rust-toolchain.toml
+        run: rustup toolchain install
+      - name: Tests (unit, golden vectors, transcripts, robustness)
+        run: cargo test --workspace --locked
+      - name: Tests in the release profile (the same results at another optimisation level)
+        run: cargo test --workspace --release --locked
+
+  msrv:
+    name: minimum supported Rust (informational)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # The workspace declares rust-version 1.85 (Cargo.toml, clippy.toml). That has not been tested on a 1.85
+    # toolchain. This job tests it. Remove continue-on-error after the first green run, or raise the declared
+    # version to what the job shows is true.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install the declared minimum
+        run: rustup toolchain install 1.85.0 --profile minimal
+      - name: Check that everything still builds on it
+        run: cargo +1.85.0 check --workspace --all-targets --locked

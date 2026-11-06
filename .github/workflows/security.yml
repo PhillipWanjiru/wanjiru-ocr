@@ -1,0 +1,58 @@
+# Supply-chain checks: licences and advisories for every dependency.
+#
+# STATUS: written, NOT YET RUN on GitHub (see ci.yml). Phase 1 has no outside dependency, so both jobs have nothing
+# to find yet; they exist so that the first dependency is checked from the day it arrives (ADR-007).
+name: security
+
+on:
+  schedule:
+    - cron: "17 3 * * 1" # Mondays, 03:17 UTC
+  push:
+    branches: [main]
+    paths:
+      - "**/Cargo.toml"
+      - "Cargo.lock"
+      - "deny.toml"
+      - "data/registry/licences.yaml"
+      - ".github/workflows/security.yml"
+  pull_request:
+    paths:
+      - "**/Cargo.toml"
+      - "Cargo.lock"
+      - "deny.toml"
+      - "data/registry/licences.yaml"
+      - ".github/workflows/security.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deny:
+    name: licences, bans and sources (cargo-deny)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: EmbarkStudios/cargo-deny-action@v2
+        with:
+          command: check
+          arguments: --all-features
+
+  audit:
+    name: advisories (RustSec)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      checks: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: rustsec/audit-check@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}

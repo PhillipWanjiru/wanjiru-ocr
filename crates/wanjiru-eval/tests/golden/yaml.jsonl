@@ -1,0 +1,205 @@
+{"yaml":"{beta: [0.1], it's: [[85.550131, false], [-741092], {'-1': 123456789.125, '# hash': 426.6}], '@at': [-124149, ['.5']]}\n","json":{"beta":[0.1],"it's":[[85.550131,false],[-741092],{"-1":123456789.125,"# hash":426.6}],"@at":[-124149,[".5"]]}}
+{"yaml":"a,b:\n    '- item':\n    - ключ\n    - -366997\n    '*alias': -866433\n","json":{"a,b":{"- item":["ключ",-366997],"*alias":-866433}}}
+{"yaml":"'0x1F':\n  'off':\n  - 124693\n  - 0.1\nключ: ''\n","json":{"0x1F":{"off":[124693,0.1]},"ключ":""}}
+{"yaml":"{'5.': [133022], ключ: {'false': 123456789.125, '&anchor': -932.0}}\n","json":{"5.":[133022],"ключ":{"false":123456789.125,"&anchor":-932.0}}}
+{"yaml":"'1.5':\n- -353.3\n","json":{"1.5":[-353.3]}}
+{"yaml":"'0x1F': '.5'\nnaïve: null\n'null':\n  '*alias': true\n  delta:\n  - true\n","json":{"0x1F":".5","naïve":null,"null":{"*alias":true,"delta":[true]}}}
+{"yaml":"{'on': -284.0}\n","json":{"on":-284.0}}
+{"yaml":"a|b: true\na,b:\n    'a: b': http://example.org/a#frag\n    '+1':\n        '5.': http://example.org/a#frag\n        '007': null\n    '*alias': 'colon:'\n'0x1F': false\n","json":{"a|b":true,"a,b":{"a: b":"http://example.org/a#frag","+1":{"5.":"http://example.org/a#frag","007":null},"*alias":"colon:"},"0x1F":false}}
+{"yaml":"'5.':\n- '2026-10-31'\n- -944296\n- 'a # b'\n'off':\n  '?': ключ\n  '2026-10-31':\n    'FALSE': null\n    'a # b': '`tick'\n'~': 'colon:'\n'2026-10-31': '.5'\n","json":{"5.":["2026-10-31",-944296,"a # b"],"off":{"?":"ключ","2026-10-31":{"FALSE":null,"a # b":"`tick"}},"~":"colon:","2026-10-31":".5"}}
+{"yaml":"{'{y}': 'null'}\n","json":{"{y}":"null"}}
+{"yaml":"'a: b':\n- -216.035\n- 0.1\n","json":{"a: b":[-216.035,0.1]}}
+{"yaml":"'# hash':\n- true\n'&anchor':\n    '5.':\n        'a # b': false\n        k92: 'True'\n    'yes': 1.0e-05\n    '!bang':\n        '1.5': null\n        größe: 'yes'\n        k22: 118.448214\n'null':\n    'on': 336.0\n    -dash:\n        'yes': 'colon:'\n        '-1': 'no'\n    a|b: '007'\n","json":{"# hash":[true],"&anchor":{"5.":{"a # b":false,"k92":"True"},"yes":1e-05,"!bang":{"1.5":null,"größe":"yes","k22":118.448214}},"null":{"on":336.0,"-dash":{"yes":"colon:","-1":"no"},"a|b":"007"}}}
+{"yaml":"{'# hash': 'a: b'}\n","json":{"# hash":"a: b"}}
+{"yaml":"'colon:': null\n日本語: 49044\n'NULL':\n- -544.0\n- '*alias'\n","json":{"colon:":null,"日本語":49044,"NULL":[-544.0,"*alias"]}}
+{"yaml":"'a: b': null\n","json":{"a: b":null}}
+{"yaml":"{'yes': [[100.0]], '?': gamma, with space: ['- item']}\n","json":{"yes":[[100.0]],"?":"gamma","with space":["- item"]}}
+{"yaml":"'007': -694858\nnaïve:\n  '2026-10-31': alpha\n  '5.': 528.575091\n'True':\n- 1.5e+20\n- -586.2\n- -624.0\nk92: 'yes'\n","json":{"007":-694858,"naïve":{"2026-10-31":"alpha","5.":528.575091},"True":[1.5e+20,-586.2,-624.0],"k92":"yes"}}
+{"yaml":"'-1': 100.0\n'{y}': 953129\n'True':\n- null\n- 1.5e+20\n- 516.164621\n","json":{"-1":100.0,"{y}":953129,"True":[null,1.5e+20,516.164621]}}
+{"yaml":"{'?': {'1.5': [' lead', -0.00425, 899203]}, '# hash': 'off', '{y}': {'a # b': {'.5': 410.673437}, '007': 'colon:'}}\n","json":{"?":{"1.5":[" lead",-0.00425,899203]},"# hash":"off","{y}":{"a # b":{".5":410.673437},"007":"colon:"}}}
+{"yaml":"'{y}':\n- -541.4\n- 1.5e+20\n- 466782\n:colon:\n    '0b101':\n    - false\n    '1.5': 1338\n    :colon:\n    - 'yes'\n    - -315.0\n    - -549941\n'Null': false\n'`tick':\n- '12:30'\n","json":{"{y}":[-541.4,1.5e+20,466782],":colon":{"0b101":[false],"1.5":1338,":colon":["yes",-315.0,-549941]},"Null":false,"`tick":["12:30"]}}
+{"yaml":"a|b:\n- 'colon:'\n- '- item'\nx:\n- 2.5e-07\n'FALSE': '!bang'\n","json":{"a|b":["colon:","- item"],"x":[2.5e-07],"FALSE":"!bang"}}
+{"yaml":"{'FALSE': true, '0b101': [{日本語: it's, 'colon:': delta, größe: 331606}, 'http://example.org/a#frag'], 'no': -dash}\n","json":{"FALSE":true,"0b101":[{"日本語":"it's","colon:":"delta","größe":331606},"http://example.org/a#frag"],"no":"-dash"}}
+{"yaml":"ключ:\n- -739377\n- 302.008003\n'no':\n- 117.0\n- -128962\n- '!bang'\n","json":{"ключ":[-739377,302.008003],"no":[117.0,-128962,"!bang"]}}
+{"yaml":"'123':\n- -127694\n- 381.135238\n- 1.0e-05\n'1_000':\n    it's:\n    - '2026-10-31'\n    'FALSE':\n    - false\n    - größe\n    - -816281\n    alpha: -378481\na,b:\n    'off':\n        say \"hi\": 'off'\n","json":{"123":[-127694,381.135238,1e-05],"1_000":{"it's":["2026-10-31"],"FALSE":[false,"größe",-816281],"alpha":-378481},"a,b":{"off":{"say \"hi\"":"off"}}}}
+{"yaml":"{'null': {'2026-10-31': ['%pct', '?'], '+1': -176.5}}\n","json":{"null":{"2026-10-31":["%pct","?"],"+1":-176.5}}}
+{"yaml":"'~':\n  ключ: true\n  :colon: 'false'\n","json":{"~":{"ключ":true,":colon":"false"}}}
+{"yaml":"k44:\n- 436089\n- 1.5e+20\n- true\n'123': 903.0\ngröße:\n- 19.291\n- -340620\n- '12:30'\n","json":{"k44":[436089,1.5e+20,true],"123":903.0,"größe":[19.291,-340620,"12:30"]}}
+{"yaml":"{'FALSE': ['&anchor', [false, 'FALSE', 857.0]], '!bang': null, x: [{'&anchor': 1.0e-05, '*alias': 922570, '!bang': 'off'}]}\n","json":{"FALSE":["&anchor",[false,"FALSE",857.0]],"!bang":null,"x":[{"&anchor":1e-05,"*alias":922570,"!bang":"off"}]}}
+{"yaml":"'1_000':\n  '.5':\n    '- item': alpha\n  日本語:\n    x: '+1'\n    '- item': -236.873\n    '[x]': it's\n'&anchor':\n  '&anchor':\n  - true\n","json":{"1_000":{".5":{"- item":"alpha"},"日本語":{"x":"+1","- item":-236.873,"[x]":"it's"}},"&anchor":{"&anchor":[true]}}}
+{"yaml":"http://example.org/a#frag:\n- '+1'\n- -271.281\n'@at':\n- 'null'\n'!bang':\n- 'FALSE'\n- 909165\n- true\n-dash:\n  'off':\n    '1.5': true\n    '007': 0.1\n  '~':\n    'null': 0.1\n","json":{"http://example.org/a#frag":["+1",-271.281],"@at":["null"],"!bang":["FALSE",909165,true],"-dash":{"off":{"1.5":true,"007":0.1},"~":{"null":0.1}}}}
+{"yaml":"{'123': {gamma: -118933, '[x]': null, '+1': '*alias'}, 'false': say \"hi\", 'a # b': {'True': {'a: b': -371.9, '@at': beta, '123': -458.813051}, say \"hi\": {'FALSE': 1.5e+20, 'a: b': '1_000', k2: 1.5e+20}}}\n","json":{"123":{"gamma":-118933,"[x]":null,"+1":"*alias"},"false":"say \"hi\"","a # b":{"True":{"a: b":-371.9,"@at":"beta","123":-458.813051},"say \"hi\"":{"FALSE":1.5e+20,"a: b":"1_000","k2":1.5e+20}}}}
+{"yaml":"it's: '0b101'\n'-1': 'on'\n'off':\n- -7702\n- 'a # b'\n- -796.0\na,b:\n  '-1':\n  - delta\n  - a|b\n","json":{"it's":"0b101","-1":"on","off":[-7702,"a # b",-796.0],"a,b":{"-1":["delta","a|b"]}}}
+{"yaml":"naïve:\n  'Null': null\n","json":{"naïve":{"Null":null}}}
+{"yaml":"{'+1': {'*alias': {say \"hi\": null, '007': 764.771}}}\n","json":{"+1":{"*alias":{"say \"hi\"":null,"007":764.771}}}}
+{"yaml":"a,b:\n  '`tick': true\n  '~': naïve\n  gamma:\n    delta: 123456789.125\n    'null': -329750\nsay \"hi\": 334.544344\n'- item':\n  '007': -797087\n  'null': 1.0e-05\n","json":{"a,b":{"`tick":true,"~":"naïve","gamma":{"delta":123456789.125,"null":-329750}},"say \"hi\"":334.544344,"- item":{"007":-797087,"null":1e-05}}}
+{"yaml":"'true': 2.5e-07\n","json":{"true":2.5e-07}}
+{"yaml":"{'5.': 339.3, 'off': null, '- item': {alpha: '@at', say \"hi\": [995644]}}\n","json":{"5.":339.3,"off":null,"- item":{"alpha":"@at","say \"hi\"":[995644]}}}
+{"yaml":"'0x1F': true\n'# hash': '0b101'\n","json":{"0x1F":true,"# hash":"0b101"}}
+{"yaml":"a|b: -514.3\nalpha: '- item'\ngamma: -419644\n","json":{"a|b":-514.3,"alpha":"- item","gamma":-419644}}
+{"yaml":"{naïve: 'True', '`tick': null, '.5': {k74: beta, say \"hi\": {'a # b': true, '12:30': 803277}}, 'True': [{'007': -645.0, 'no': false}, -173.382374]}\n","json":{"naïve":"True","`tick":null,".5":{"k74":"beta","say \"hi\"":{"a # b":true,"12:30":803277}},"True":[{"007":-645.0,"no":false},-173.382374]}}
+{"yaml":"'+1':\n  it's:\n  - '12:30'\n  'off':\n    '2026-10-31': '!bang'\n    'false': naïve\n    'NULL': 100.0\n'a: b': :colon\nx:\n  'on':\n  - 704.468\n  - 42308\n  - null\nit's: -602910\n","json":{"+1":{"it's":["12:30"],"off":{"2026-10-31":"!bang","false":"naïve","NULL":100.0}},"a: b":":colon","x":{"on":[704.468,42308,null]},"it's":-602910}}
+{"yaml":"'false':\n- -963129\n- true\n- '0b101'\n","json":{"false":[-963129,true,"0b101"]}}
+{"yaml":"{x: 日本語}\n","json":{"x":"日本語"}}
+{"yaml":"'12:30': '*alias'\n","json":{"12:30":"*alias"}}
+{"yaml":"http://example.org/a#frag: gamma\n'off':\n    '&anchor': null\n    '?': -851.522\n","json":{"http://example.org/a#frag":"gamma","off":{"&anchor":null,"?":-851.522}}}
+{"yaml":"{beta: 1.0e-05, -dash: [{'colon:': ' lead', say \"hi\": null}]}\n","json":{"beta":1e-05,"-dash":[{"colon:":" lead","say \"hi\"":null}]}}
+{"yaml":"'+1': 1.5e+20\n'true':\n- '[x]'\n- 111161\n- 123456789.125\n","json":{"+1":1.5e+20,"true":["[x]",111161,123456789.125]}}
+{"yaml":"日本語:\n    '12:30': 100.0\n","json":{"日本語":{"12:30":100.0}}}
+{"yaml":"{'?': {alpha: {'True': -0.00425}}, '`tick': -38561, '.5': 'trail ', 日本語: null}\n","json":{"?":{"alpha":{"True":-0.00425}},"`tick":-38561,".5":"trail ","日本語":null}}
+{"yaml":"'Null':\n  'colon:':\n    'a: b': 'on'\n  '*alias':\n    '%pct': -818770\n'no':\n  ключ:\n  - 765.0\n  - 日本語\n  '0x1F': '123'\n  '-1': 371.74342\nnaïve: -684427\nsay \"hi\":\n- 443257\n- 1.5e+20\n- 413.753508\n","json":{"Null":{"colon:":{"a: b":"on"},"*alias":{"%pct":-818770}},"no":{"ключ":[765.0,"日本語"],"0x1F":"123","-1":371.74342},"naïve":-684427,"say \"hi\"":[443257,1.5e+20,413.753508]}}
+{"yaml":"'0b101':\n  'NULL': '12:30'\n'&anchor':\n  'colon:':\n    '-1': '-1'\n    x: 882071\n    -dash: alpha\n  '~': 1.5e+20\n'null': -328.659549\n","json":{"0b101":{"NULL":"12:30"},"&anchor":{"colon:":{"-1":"-1","x":882071,"-dash":"alpha"},"~":1.5e+20},"null":-328.659549}}
+{"yaml":"{'on': {'0x1F': {'yes': 143606, '~': 91.181257, 'a # b': 292.0}, ':colon': -966025}}\n","json":{"on":{"0x1F":{"yes":143606,"~":91.181257,"a # b":292.0},":colon":-966025}}}
+{"yaml":"'!bang': a|b\n","json":{"!bang":"a|b"}}
+{"yaml":"'@at': 354384\n","json":{"@at":354384}}
+{"yaml":"{'5.': beta, say \"hi\": -265612, '{y}': '%pct'}\n","json":{"5.":"beta","say \"hi\"":-265612,"{y}":"%pct"}}
+{"yaml":"'# hash': say \"hi\"\nsay \"hi\":\n    'NULL': '.5'\n    '007': 100.0\n'&anchor': 993079\n'- item':\n    'a # b': -741986\n    gamma: 338.439\n    a,b: 'yes'\n","json":{"# hash":"say \"hi\"","say \"hi\"":{"NULL":".5","007":100.0},"&anchor":993079,"- item":{"a # b":-741986,"gamma":338.439,"a,b":"yes"}}}
+{"yaml":"'a: b': 1.5e+20\n","json":{"a: b":1.5e+20}}
+{"yaml":"{'123': 1.5e+20}\n","json":{"123":1.5e+20}}
+{"yaml":"'- item':\n  '1.5':\n  - '12:30'\n  - 0.1\n  - 222519\n  '~': 'FALSE'\n","json":{"- item":{"1.5":["12:30",0.1,222519],"~":"FALSE"}}}
+{"yaml":"'007':\n- 0.1\n- 1.0e-05\n- null\n'+1':\n    a,b:\n        x: 2.5e-07\n        '# hash': 2.5e-07\n        gamma: -533.1\n'false': 1.5e+20\n'`tick':\n    '- item': null\n    'a: b': null\n","json":{"007":[0.1,1e-05,null],"+1":{"a,b":{"x":2.5e-07,"# hash":2.5e-07,"gamma":-533.1}},"false":1.5e+20,"`tick":{"- item":null,"a: b":null}}}
+{"yaml":"{'http://example.org/a#frag': say \"hi\", '0x1F': {'-1': [1.5e+20], k45: {größe: delta}}}\n","json":{"http://example.org/a#frag":"say \"hi\"","0x1F":{"-1":[1.5e+20],"k45":{"größe":"delta"}}}}
+{"yaml":"beta:\n  '+1':\n    'NULL': '!bang'\n  '1.5': '[x]'\n'Null': null\nwith space: '{y}'\n'`tick':\n- 1.0e-05\n","json":{"beta":{"+1":{"NULL":"!bang"},"1.5":"[x]"},"Null":null,"with space":"{y}","`tick":[1e-05]}}
+{"yaml":"'`tick': false\nключ: true\nnaïve:\n- 'NULL'\n- 848.598413\n","json":{"`tick":false,"ключ":true,"naïve":["NULL",848.598413]}}
+{"yaml":"{'*alias': false, 'a,b': {'5.': {'a # b': naïve}}}\n","json":{"*alias":false,"a,b":{"5.":{"a # b":"naïve"}}}}
+{"yaml":"'0x1F': true\n'Null':\n  '[x]':\n    '5.': -279.3\na|b: 508.7\n'5.': 140087\n","json":{"0x1F":true,"Null":{"[x]":{"5.":-279.3}},"a|b":508.7,"5.":140087}}
+{"yaml":"'123': true\n'1.5':\n- '%pct'\n- 1.0e-05\n- 690.9\n-dash:\n    'NULL':\n    - -531310\n    '0b101':\n    - null\n    - null\n    '`tick':\n        '1.5': 831459\n","json":{"123":true,"1.5":["%pct",1e-05,690.9],"-dash":{"NULL":[-531310],"0b101":[null,null],"`tick":{"1.5":831459}}}}
+{"yaml":"{'- item': true, '+1': 2.5e-07, '0b101': [-709.941, -751835, {'- item': 2.5e-07, '# hash': 411428, '1_000': true}], k0: 959835}\n","json":{"- item":true,"+1":2.5e-07,"0b101":[-709.941,-751835,{"- item":2.5e-07,"# hash":411428,"1_000":true}],"k0":959835}}
+{"yaml":"'.5': false\n","json":{".5":false}}
+{"yaml":"'+1': with space\ndelta: 375493\nключ: -433.3\n","json":{"+1":"with space","delta":375493,"ключ":-433.3}}
+{"yaml":"{'&anchor': '0b101', '?': -882095, '%pct': 413662, '[x]': [[100.0, gamma]]}\n","json":{"&anchor":"0b101","?":-882095,"%pct":413662,"[x]":[[100.0,"gamma"]]}}
+{"yaml":"'12:30':\n  'True':\n  - -281046\n  - 443.372\n  - 'a: b'\n  'a: b': -937.7553\n  '0b101': true\n'5.': '2026-10-31'\n'{y}':\n  'colon:':\n  - 'FALSE'\n  - 747896\n  '{y}': 429436\n  'null': 'no'\n","json":{"12:30":{"True":[-281046,443.372,"a: b"],"a: b":-937.7553,"0b101":true},"5.":"2026-10-31","{y}":{"colon:":["FALSE",747896],"{y}":429436,"null":"no"}}}
+{"yaml":"a|b:\n- -351.503375\n- 0.1\nключ:\n  -dash:\n    '5.': -155358\n    'NULL': 100.0\n  say \"hi\":\n  - -232.203885\n  - 日本語\n","json":{"a|b":[-351.503375,0.1],"ключ":{"-dash":{"5.":-155358,"NULL":100.0},"say \"hi\"":[-232.203885,"日本語"]}}}
+{"yaml":"{with space: -90045}\n","json":{"with space":-90045}}
+{"yaml":"'*alias':\n- 361.027\n'true':\n- null\n'007':\n    '%pct':\n        'Null': a,b\n'1_000': 100.0\n","json":{"*alias":[361.027],"true":[null],"007":{"%pct":{"Null":"a,b"}},"1_000":100.0}}
+{"yaml":"'Null': 'on'\n:colon: 2.5e-07\nnaïve:\n  alpha: 855.0\n","json":{"Null":"on",":colon":2.5e-07,"naïve":{"alpha":855.0}}}
+{"yaml":"{'!bang': [[true, 'NULL', null], -834588]}\n","json":{"!bang":[[true,"NULL",null],-834588]}}
+{"yaml":"'no':\n- 'false'\n'on':\n    '12:30': -48.0\n    beta: -255907\n","json":{"no":["false"],"on":{"12:30":-48.0,"beta":-255907}}}
+{"yaml":"k89:\n- false\n- alpha\n'.5':\n- 'colon:'\n- :colon\nbeta:\n- -323.242831\n- 981.0\n- true\n","json":{"k89":[false,"alpha"],".5":["colon:",":colon"],"beta":[-323.242831,981.0,true]}}
+{"yaml":"{k14: [[-874.0]]}\n","json":{"k14":[[-874.0]]}}
+{"yaml":"'0b101':\n    '123':\n    - 257750\n    - true\n","json":{"0b101":{"123":[257750,true]}}}
+{"yaml":"'a: b': true\n","json":{"a: b":true}}
+{"yaml":"{'no': -354.519673, 'null': -169754}\n","json":{"no":-354.519673,"null":-169754}}
+{"yaml":"'false': 2.5e-07\n'@at':\n- 396404\n","json":{"false":2.5e-07,"@at":[396404]}}
+{"yaml":"delta:\n    'true': null\n    'on':\n        beta: true\n    'FALSE': 'FALSE'\n'colon:':\n    delta: null\nbeta: '007'\n","json":{"delta":{"true":null,"on":{"beta":true},"FALSE":"FALSE"},"colon:":{"delta":null},"beta":"007"}}
+{"yaml":"{'0x1F': [[a|b, 'a: b']]}\n","json":{"0x1F":[["a|b","a: b"]]}}
+{"yaml":"delta:\n  alpha: null\n  '2026-10-31': 606.512716\n  '007':\n  - '123'\n  - 123456789.125\n  - 590219\n'FALSE': -447105\nwith space: 'NULL'\n'%pct':\n  naïve:\n  - -105075\n  - 1.0e-05\n  - 'FALSE'\n","json":{"delta":{"alpha":null,"2026-10-31":606.512716,"007":["123",123456789.125,590219]},"FALSE":-447105,"with space":"NULL","%pct":{"naïve":[-105075,1e-05,"FALSE"]}}}
+{"yaml":"say \"hi\":\n- '5.'\n","json":{"say \"hi\"":["5."]}}
+{"yaml":"{'True': [{'NULL': 1.5e+20, it's: 1.5e+20, with space: 14.5}], a|b: null, '1_000': [null]}\n","json":{"True":[{"NULL":1.5e+20,"it's":1.5e+20,"with space":14.5}],"a|b":null,"1_000":[null]}}
+{"yaml":"x:\n- true\n- 367427\n- 927.3\n'True': -765075\n'{y}':\n- 263364\n- 'a: b'\n","json":{"x":[true,367427,927.3],"True":-765075,"{y}":[263364,"a: b"]}}
+{"yaml":"日本語: true\n'123':\n- '123'\n- '`tick'\nalpha: 993.284\n","json":{"日本語":true,"123":["123","`tick"],"alpha":993.284}}
+{"yaml":"{with space: 0.1, '+1': {'no': ['FALSE', ''], '0x1F': '123'}}\n","json":{"with space":0.1,"+1":{"no":["FALSE",""],"0x1F":"123"}}}
+{"yaml":"http://example.org/a#frag: '1.5'\n'null':\n    'yes': '@at'\n'%pct': -827.982406\n","json":{"http://example.org/a#frag":"1.5","null":{"yes":"@at"},"%pct":-827.982406}}
+{"yaml":"beta: ключ\n'[x]': beta\n'{y}':\n- 1.0e-05\n- -469.012095\ndelta:\n- 'True'\n- 24.0\n- a|b\n","json":{"beta":"ключ","[x]":"beta","{y}":[1e-05,-469.012095],"delta":["True",24.0,"a|b"]}}
+{"yaml":"{'0b101': true, '0x1F': {'&anchor': [true, '# hash'], '0b101': -909334}, '-1': ['.5', 'http://example.org/a#frag', {'~': 865.435, '&anchor': true, with space: -427291}]}\n","json":{"0b101":true,"0x1F":{"&anchor":[true,"# hash"],"0b101":-909334},"-1":[".5","http://example.org/a#frag",{"~":865.435,"&anchor":true,"with space":-427291}]}}
+{"yaml":"'%pct':\n- -570834\n- false\n- alpha\n'0x1F':\n    it's:\n    - true\n    x: 107169\nwith space:\n- gamma\n- 2.5e-07\n","json":{"%pct":[-570834,false,"alpha"],"0x1F":{"it's":[true],"x":107169},"with space":["gamma",2.5e-07]}}
+{"yaml":"'1.5': 285.045\n'on':\n- -0.00425\n- 'True'\n","json":{"1.5":285.045,"on":[-0.00425,"True"]}}
+{"yaml":"{'?': [-926396, ['!bang']], ключ: ['colon:', '?'], 'a,b': {'!bang': [-19.1, 2.5e-07], '*alias': ['null', 0.1], '&anchor': '# hash'}}\n","json":{"?":[-926396,["!bang"]],"ключ":["colon:","?"],"a,b":{"!bang":[-19.1,2.5e-07],"*alias":["null",0.1],"&anchor":"# hash"}}}
+{"yaml":"'2026-10-31':\n- 1.5e+20\n- 'FALSE'\ngröße:\n- 774800\n- ключ\n- -0.00425\n'colon:': 568.927082\n'.5':\n- 'FALSE'\n- 347571\n","json":{"2026-10-31":[1.5e+20,"FALSE"],"größe":[774800,"ключ",-0.00425],"colon:":568.927082,".5":["FALSE",347571]}}
+{"yaml":"delta:\n  with space: '!bang'\n'@at':\n- 2.5e-07\n'a: b':\n  -dash: 199009\ngröße:\n  '.5': -dash\n  '+1': false\n  'false': 1.5e+20\n","json":{"delta":{"with space":"!bang"},"@at":[2.5e-07],"a: b":{"-dash":199009},"größe":{".5":"-dash","+1":false,"false":1.5e+20}}}
+{"yaml":"{'%pct': {'- item': true, 'on': false}, gamma: {naïve: -466.249, alpha: {x: -606.64, '%pct': -985153}}}\n","json":{"%pct":{"- item":true,"on":false},"gamma":{"naïve":-466.249,"alpha":{"x":-606.64,"%pct":-985153}}}}
+{"yaml":"'-1':\n    '2026-10-31':\n        alpha: -214.610474\n        'True': -796.742\n        'NULL': 570.224433\n    http://example.org/a#frag:\n        it's: '007'\n    'false': 100.0\ndelta: 478909\nx:\n    '@at':\n    - -937.9\n    - -546016\n    - 52655\n    say \"hi\": 'true'\n","json":{"-1":{"2026-10-31":{"alpha":-214.610474,"True":-796.742,"NULL":570.224433},"http://example.org/a#frag":{"it's":"007"},"false":100.0},"delta":478909,"x":{"@at":[-937.9,-546016,52655],"say \"hi\"":"true"}}}
+{"yaml":"beta: -0.00425\n-dash: null\n","json":{"beta":-0.00425,"-dash":null}}
+{"yaml":"{'1_000': [[936522], '# hash']}\n","json":{"1_000":[[936522],"# hash"]}}
+{"yaml":"k92:\n- 'trail '\n'!bang':\n  ключ: -dash\n  '- item':\n    x: -957640\n    'a # b': 日本語\nwith space:\n- '1.5'\n- false\n","json":{"k92":["trail "],"!bang":{"ключ":"-dash","- item":{"x":-957640,"a # b":"日本語"}},"with space":["1.5",false]}}
+{"yaml":"'off':\n- 54.0\n- 1.0e-05\n'FALSE': -0.00425\n","json":{"off":[54.0,1e-05],"FALSE":-0.00425}}
+{"yaml":"{gamma: [0.1]}\n","json":{"gamma":[0.1]}}
+{"yaml":"'`tick': -387316\n'on':\n  -dash: 1.0e-05\n  'FALSE':\n  - 0.1\n  - false\n  - null\n  '&anchor':\n  - 2.5e-07\n","json":{"`tick":-387316,"on":{"-dash":1e-05,"FALSE":[0.1,false,null],"&anchor":[2.5e-07]}}}
+{"yaml":"a|b:\n- -292284\n'# hash': -957326\n'null':\n  '007':\n    delta: null\n    '# hash': -271.0\n  'false': '%pct'\n'a: b': '# hash'\n","json":{"a|b":[-292284],"# hash":-957326,"null":{"007":{"delta":null,"# hash":-271.0},"false":"%pct"},"a: b":"# hash"}}
+{"yaml":"{'123': [0.1, 204630], '# hash': 100.0, 'yes': [{say \"hi\": 239.7, with space: true}], '?': {'True': [1.0e-05, 16.322674], '.5': ['FALSE']}}\n","json":{"123":[0.1,204630],"# hash":100.0,"yes":[{"say \"hi\"":239.7,"with space":true}],"?":{"True":[1e-05,16.322674],".5":["FALSE"]}}}
+{"yaml":"'NULL':\n- 682095\n- '1_000'\n","json":{"NULL":[682095,"1_000"]}}
+{"yaml":"größe:\n  '`tick': -0.00425\n  with space:\n  - delta\n  'off': 58.57636\n'# hash': null\n'&anchor': null\n","json":{"größe":{"`tick":-0.00425,"with space":["delta"],"off":58.57636},"# hash":null,"&anchor":null}}
+{"yaml":"{it's: null}\n","json":{"it's":null}}
+{"yaml":"'{y}':\n    日本語:\n        '.5': '[x]'\n        'True': -0.00425\n    x:\n    - a|b\n    - 'false'\n    - -635.3\n    '.5': null\n'no':\n    'a: b':\n    - 'colon:'\n    - -644.204\n    - '2026-10-31'\n","json":{"{y}":{"日本語":{".5":"[x]","True":-0.00425},"x":["a|b","false",-635.3],".5":null},"no":{"a: b":["colon:",-644.204,"2026-10-31"]}}}
+{"yaml":"'.5':\n  '[x]':\n    'colon:': 2.5e-07\n    '0x1F': '123'\n  '`tick':\n    '5.': 'NULL'\n    'null': false\n  'a # b': 431.0\nk30:\n- gamma\n- 100.0\n- -780.135\n'007': true\n","json":{".5":{"[x]":{"colon:":2.5e-07,"0x1F":"123"},"`tick":{"5.":"NULL","null":false},"a # b":431.0},"k30":["gamma",100.0,-780.135],"007":true}}
+{"yaml":"{alpha: [{'null': 0.1}], '&anchor': [{'2026-10-31': 423606, '~': '12:30'}]}\n","json":{"alpha":[{"null":0.1}],"&anchor":[{"2026-10-31":423606,"~":"12:30"}]}}
+{"yaml":"naïve: -575.942169\n","json":{"naïve":-575.942169}}
+{"yaml":"'&anchor': 1.5e+20\n'[x]': -665.123564\n'@at':\n- 'Null'\n- false\n- true\n日本語:\n  ключ:\n    '1.5': -745014\n    '0b101': '2026-10-31'\n    'colon:': null\n  '# hash':\n  - 100.0\n  - 1.0e-05\n  - 日本語\n  'FALSE': '0b101'\n","json":{"&anchor":1.5e+20,"[x]":-665.123564,"@at":["Null",false,true],"日本語":{"ключ":{"1.5":-745014,"0b101":"2026-10-31","colon:":null},"# hash":[100.0,1e-05,"日本語"],"FALSE":"0b101"}}}
+{"yaml":"{ключ: 527.0, '`tick': [[it's, null, true], [670121, -2618], 814.0], delta: {say \"hi\": ['True', true, 日本語], '12:30': '123'}, 'on': 0.1}\n","json":{"ключ":527.0,"`tick":[["it's",null,true],[670121,-2618],814.0],"delta":{"say \"hi\"":["True",true,"日本語"],"12:30":"123"},"on":0.1}}
+{"yaml":"alpha:\n    '1_000': 'NULL'\n    '5.': -510911\n'@at':\n    http://example.org/a#frag:\n    - -715168\n    - 'a # b'\n    'off':\n    - null\n    - '12:30'\n    'True':\n        a,b: '007'\n","json":{"alpha":{"1_000":"NULL","5.":-510911},"@at":{"http://example.org/a#frag":[-715168,"a # b"],"off":[null,"12:30"],"True":{"a,b":"007"}}}}
+{"yaml":"'&anchor': '- item'\na,b:\n- -124703\n- true\n日本語:\n- 126.3\n'1_000': true\n","json":{"&anchor":"- item","a,b":[-124703,true],"日本語":[126.3],"1_000":true}}
+{"yaml":"{'-1': {'5.': ['007', false], '2026-10-31': [-0.00425], '!bang': '123'}, 'true': -616008}\n","json":{"-1":{"5.":["007",false],"2026-10-31":[-0.00425],"!bang":"123"},"true":-616008}}
+{"yaml":"'007': -512840\n-dash: größe\n","json":{"007":-512840,"-dash":"größe"}}
+{"yaml":"'null': beta\nsay \"hi\": 105.409\n","json":{"null":"beta","say \"hi\"":105.409}}
+{"yaml":"{delta: {'1_000': 2.5e-07, 'NULL': [null], '.5': [null, '1_000']}, '123': -963359, '007': {'-1': [-202181, 0.1, -713.385], '1.5': 274865, say \"hi\": {'yes': true}}}\n","json":{"delta":{"1_000":2.5e-07,"NULL":[null],".5":[null,"1_000"]},"123":-963359,"007":{"-1":[-202181,0.1,-713.385],"1.5":274865,"say \"hi\"":{"yes":true}}}}
+{"yaml":"'# hash':\n- 4.8\n'on':\n  'FALSE':\n  - 1.5e+20\n  - '1_000'\n  - -0.00425\n  'Null':\n  - '1.5'\n  '*alias': -557049\n'%pct':\n- 123456789.125\n","json":{"# hash":[4.8],"on":{"FALSE":[1.5e+20,"1_000",-0.00425],"Null":["1.5"],"*alias":-557049},"%pct":[123456789.125]}}
+{"yaml":"'yes':\n- 1.5e+20\n- -527.0\n","json":{"yes":[1.5e+20,-527.0]}}
+{"yaml":"{'12:30': {naïve: [6853], '~': {'- item': 567077, k68: -0.00425}, with space: größe}, it's: 123456789.125}\n","json":{"12:30":{"naïve":[6853],"~":{"- item":567077,"k68":-0.00425},"with space":"größe"},"it's":123456789.125}}
+{"yaml":"'!bang':\n  größe: -599950\n  'yes':\n    x: -23.927\n    '1.5': true\n'- item': 742.0\n'off':\n  delta:\n    '1_000': '12:30'\n    naïve: 397018\n  '!bang':\n  - a,b\n  - -31.0\n  - 100.0\n","json":{"!bang":{"größe":-599950,"yes":{"x":-23.927,"1.5":true}},"- item":742.0,"off":{"delta":{"1_000":"12:30","naïve":397018},"!bang":["a,b",-31.0,100.0]}}}
+{"yaml":"'null':\n- -845.409\n","json":{"null":[-845.409]}}
+{"yaml":"{'http://example.org/a#frag': {beta: true, 'on': {a|b: ключ}}, '12:30': -932711, alpha: [{'FALSE': -727.0, 'NULL': 'Null'}, 461.0, {ключ: 593657, 'on': -0.00425, k24: 926068}]}\n","json":{"http://example.org/a#frag":{"beta":true,"on":{"a|b":"ключ"}},"12:30":-932711,"alpha":[{"FALSE":-727.0,"NULL":"Null"},461.0,{"ключ":593657,"on":-0.00425,"k24":926068}]}}
+{"yaml":"'+1':\n- -1.0\n日本語: '`tick'\n'2026-10-31':\n  'false':\n  - -819072\n  - 'null'\n  - false\n  '1.5':\n  - true\n  - true\n  - false\n  '0x1F':\n    beta: 852.951617\n    http://example.org/a#frag: 1.5e+20\n","json":{"+1":[-1.0],"日本語":"`tick","2026-10-31":{"false":[-819072,"null",false],"1.5":[true,true,false],"0x1F":{"beta":852.951617,"http://example.org/a#frag":1.5e+20}}}}
+{"yaml":"'~':\n- null\n'-1':\n- 1.0e-05\n- -333.0\n- '&anchor'\n","json":{"~":[null],"-1":[1e-05,-333.0,"&anchor"]}}
+{"yaml":"{gamma: [{'[x]': naïve, '-1': 'FALSE', naïve: 82.3}, {'!bang': 123456789.125}, 296737], 'a,b': 2.5e-07}\n","json":{"gamma":[{"[x]":"naïve","-1":"FALSE","naïve":82.3},{"!bang":123456789.125},296737],"a,b":2.5e-07}}
+{"yaml":"'%pct': 770.6\n'@at':\n- -862006\n- 193.039\n'colon:': false\nключ: -899441\n","json":{"%pct":770.6,"@at":[-862006,193.039],"colon:":false,"ключ":-899441}}
+{"yaml":"'on':\n- '.5'\n- -857.129\n'.5':\n  'a # b':\n    'FALSE': 100.0\n","json":{"on":[".5",-857.129],".5":{"a # b":{"FALSE":100.0}}}}
+{"yaml":"{'[x]': -889356, -dash: -921.273538, alpha: 209259}\n","json":{"[x]":-889356,"-dash":-921.273538,"alpha":209259}}
+{"yaml":"'&anchor': '123'\nbeta: '1_000'\n'no': 100.0\n'a # b': '-1'\n","json":{"&anchor":"123","beta":"1_000","no":100.0,"a # b":"-1"}}
+{"yaml":"'off': 165.0\n'`tick':\n- -136049\n- 390779\n'true':\n  'on':\n    'NULL': 1.5e+20\n  '007':\n  - false\n  - -335.0\n  - -639872\n  naïve: 0.1\n'{y}':\n- true\n","json":{"off":165.0,"`tick":[-136049,390779],"true":{"on":{"NULL":1.5e+20},"007":[false,-335.0,-639872],"naïve":0.1},"{y}":[true]}}
+{"yaml":"{'True': [2.5e-07, {gamma: 123456789.125, with space: null}, naïve], 'yes': [2.5e-07, 932384], a|b: alpha, it's: {'http://example.org/a#frag': false, '# hash': {'colon:': '~', 'no': 'false'}}}\n","json":{"True":[2.5e-07,{"gamma":123456789.125,"with space":null},"naïve"],"yes":[2.5e-07,932384],"a|b":"alpha","it's":{"http://example.org/a#frag":false,"# hash":{"colon:":"~","no":"false"}}}}
+{"yaml":"'True':\n- ''\nключ: 123456789.125\n'null':\n- true\n- false\n'-1':\n- a,b\n","json":{"True":[""],"ключ":123456789.125,"null":[true,false],"-1":["a,b"]}}
+{"yaml":"'+1':\n    '[x]':\n        '12:30': '-1'\n    'no':\n        'a # b': -583432\n        x: '&anchor'\n        'FALSE': -243277\n'%pct':\n- beta\n'007':\n- 'false'\n","json":{"+1":{"[x]":{"12:30":"-1"},"no":{"a # b":-583432,"x":"&anchor","FALSE":-243277}},"%pct":["beta"],"007":["false"]}}
+{"yaml":"{beta: [{-dash: 1.5e+20, '1.5': 100.0, alpha: -597.0}]}\n","json":{"beta":[{"-dash":1.5e+20,"1.5":100.0,"alpha":-597.0}]}}
+{"yaml":"'-1':\n    '!bang':\n        'a: b': false\n        -dash: 0.1\n        k83: true\n    naïve:\n    - '&anchor'\n    - '+1'\n    - '-1'\n","json":{"-1":{"!bang":{"a: b":false,"-dash":0.1,"k83":true},"naïve":["&anchor","+1","-1"]}}}
+{"yaml":"alpha: 700.0\n","json":{"alpha":700.0}}
+{"yaml":"{with space: größe}\n","json":{"with space":"größe"}}
+{"yaml":"'- item': '[x]'\n:colon: true\n'?':\n  'colon:':\n    -dash: false\n    'true': a|b\n  ключ:\n  - -0.00425\n  - -253.0\n  '0x1F': -575.0\n'*alias':\n  '1_000':\n    -dash: 2.5e-07\n  '.5':\n  - null\n","json":{"- item":"[x]",":colon":true,"?":{"colon:":{"-dash":false,"true":"a|b"},"ключ":[-0.00425,-253.0],"0x1F":-575.0},"*alias":{"1_000":{"-dash":2.5e-07},".5":[null]}}}
+{"yaml":"'a # b': '~'\n'true':\n- 1.0e-05\n- null\n- null\n","json":{"a # b":"~","true":[1e-05,null,null]}}
+{"yaml":"{'True': [{'a,b': '*alias'}], größe: [[-310457, '[x]'], -43.189]}\n","json":{"True":[{"a,b":"*alias"}],"größe":[[-310457,"[x]"],-43.189]}}
+{"yaml":"a,b:\n- gamma\n","json":{"a,b":["gamma"]}}
+{"yaml":"'false':\n  '5.': '[x]'\n  '!bang':\n  - 'true'\n  - 1.0e-05\n'off': 105289\na,b:\n  'colon:': -302.0\n  '1_000':\n  - -282.8\n  - ключ\n'~':\n  '?':\n  - '[x]'\n  '!bang':\n    'colon:': true\n  k96: 'false'\n","json":{"false":{"5.":"[x]","!bang":["true",1e-05]},"off":105289,"a,b":{"colon:":-302.0,"1_000":[-282.8,"ключ"]},"~":{"?":["[x]"],"!bang":{"colon:":true},"k96":"false"}}}
+{"yaml":"{'2026-10-31': [{'# hash': -16.099669}, ['true', 216.0, false], {'.5': delta, alpha: beta, 'FALSE': 929.0}], 'colon:': [2.5e-07, {'false': 100.0, größe: -638275, alpha: -886670}, [2.5e-07, true]], '%pct': 2.5e-07}\n","json":{"2026-10-31":[{"# hash":-16.099669},["true",216.0,false],{".5":"delta","alpha":"beta","FALSE":929.0}],"colon:":[2.5e-07,{"false":100.0,"größe":-638275,"alpha":-886670},[2.5e-07,true]],"%pct":2.5e-07}}
+{"yaml":"'@at': '0x1F'\n'[x]':\n    -dash:\n    - null\n    - 0.1\n    '# hash':\n        '&anchor': a,b\n        '{y}': -dash\n","json":{"@at":"0x1F","[x]":{"-dash":[null,0.1],"# hash":{"&anchor":"a,b","{y}":"-dash"}}}}
+{"yaml":"'true': delta\n'007': ключ\n'- item':\n    'off': -665757\n    'yes':\n        http://example.org/a#frag: 'null'\n","json":{"true":"delta","007":"ключ","- item":{"off":-665757,"yes":{"http://example.org/a#frag":"null"}}}}
+{"yaml":"{'a,b': false}\n","json":{"a,b":false}}
+{"yaml":"say \"hi\": a|b\nbeta:\n- '1.5'\n- 69036\n:colon:\n  '%pct': 'off'\n  '!bang':\n  - 686.0\n","json":{"say \"hi\"":"a|b","beta":["1.5",69036],":colon":{"%pct":"off","!bang":[686.0]}}}
+{"yaml":"größe:\n- true\n- -327.4\n- with space\n'5.':\n  http://example.org/a#frag: -735.463219\n  beta:\n    '5.': -52239\n    ключ: 566.6\n'1_000':\n  'Null':\n    'false': -453690\n    '0b101': 'on'\na,b:\n  it's:\n    '*alias': 600437\n  k14: 327841\n  delta:\n  - 174193\n  - 'True'\n  - false\n","json":{"größe":[true,-327.4,"with space"],"5.":{"http://example.org/a#frag":-735.463219,"beta":{"5.":-52239,"ключ":566.6}},"1_000":{"Null":{"false":-453690,"0b101":"on"}},"a,b":{"it's":{"*alias":600437},"k14":327841,"delta":[174193,"True",false]}}}
+{"yaml":"{日本語: {'`tick': ['&anchor', -0.00425, 'a: b']}, '+1': {k65: [null, delta], 'True': {k65: true, '.5': 'a: b', 'no': '?'}}, '&anchor': [-131819, -98.0, [282327, true, 276457]], '# hash': {'*alias': null, '0b101': 'false', '%pct': {'false': false, a|b: 558.9}}}\n","json":{"日本語":{"`tick":["&anchor",-0.00425,"a: b"]},"+1":{"k65":[null,"delta"],"True":{"k65":true,".5":"a: b","no":"?"}},"&anchor":[-131819,-98.0,[282327,true,276457]],"# hash":{"*alias":null,"0b101":"false","%pct":{"false":false,"a|b":558.9}}}}
+{"yaml":"'- item': a|b\n","json":{"- item":"a|b"}}
+{"yaml":"'!bang':\n    größe:\n        'yes': 287714\n        '2026-10-31': 874816\n        '- item': 'on'\n    alpha: '{y}'\n'-1':\n    'yes':\n        'a: b': true\n        alpha: -741.0\n    '[x]':\n        'true': delta\n        '# hash': '[x]'\n","json":{"!bang":{"größe":{"yes":287714,"2026-10-31":874816,"- item":"on"},"alpha":"{y}"},"-1":{"yes":{"a: b":true,"alpha":-741.0},"[x]":{"true":"delta","# hash":"[x]"}}}}
+{"yaml":"{'on': 2.5e-07}\n","json":{"on":2.5e-07}}
+{"yaml":"'a # b':\n- 2.5e-07\n- 100.0\n- -17883\n'Null': '!bang'\n","json":{"a # b":[2.5e-07,100.0,-17883],"Null":"!bang"}}
+{"yaml":"größe:\n- -799242\n- true\n- '+1'\n'[x]':\n  say \"hi\": 'true'\n  'a: b': 488296\n'12:30':\n  '123':\n  - 'Null'\n  - beta\n  - größe\n'2026-10-31': -530455\n","json":{"größe":[-799242,true,"+1"],"[x]":{"say \"hi\"":"true","a: b":488296},"12:30":{"123":["Null","beta","größe"]},"2026-10-31":-530455}}
+{"yaml":"{'?': 2.5e-07, '{y}': {'007': ['a: b', say \"hi\"], alpha: [557919]}, say \"hi\": ['on', {'a: b': beta, '`tick': 0.1}]}\n","json":{"?":2.5e-07,"{y}":{"007":["a: b","say \"hi\""],"alpha":[557919]},"say \"hi\"":["on",{"a: b":"beta","`tick":0.1}]}}
+{"yaml":"'no':\n  beta:\n    'no': 313.0\n    say \"hi\": 0.1\n'123': 990317\n'007': '.5'\n","json":{"no":{"beta":{"no":313.0,"say \"hi\"":0.1}},"123":990317,"007":".5"}}
+{"yaml":"'?': null\n'*alias':\n    '*alias':\n    - -791.902\n    - 0.1\n    - say \"hi\"\n    'a # b':\n    - 633.844486\n    - -709.912\n'+1':\n- null\n- -594.756844\n-dash:\n    say \"hi\":\n    - 'off'\n    - 'True'\n    - true\n    '-1':\n    - '@at'\n    '5.': 'Null'\n","json":{"?":null,"*alias":{"*alias":[-791.902,0.1,"say \"hi\""],"a # b":[633.844486,-709.912]},"+1":[null,-594.756844],"-dash":{"say \"hi\"":["off","True",true],"-1":["@at"],"5.":"Null"}}}
+{"yaml":"{k30: 1.5e+20, 'NULL': [476334, 'null']}\n","json":{"k30":1.5e+20,"NULL":[476334,"null"]}}
+{"yaml":"'123':\n  say \"hi\":\n    'a: b': -514.688232\na,b:\n  ключ:\n  - 123456789.125\n  'no': 963968\n  '1_000':\n    '- item': 'off'\n    '12:30': true\n    '.5': 205119\n","json":{"123":{"say \"hi\"":{"a: b":-514.688232}},"a,b":{"ключ":[123456789.125],"no":963968,"1_000":{"- item":"off","12:30":true,".5":205119}}}}
+{"yaml":"'0b101':\n  '{y}':\n    alpha: -466697\n  'on':\n  - '123'\n  - 1.0e-05\n  '*alias': 1.5e+20\n'True':\n- 626.6\n- 172.0\n- '`tick'\n","json":{"0b101":{"{y}":{"alpha":-466697},"on":["123",1e-05],"*alias":1.5e+20},"True":[626.6,172.0,"`tick"]}}
+{"yaml":"{'!bang': 255670, it's: '+1', '%pct': {'+1': {beta: '- item'}, x: ['on'], '# hash': {'no': '0x1F', '&anchor': 202.0}}, 'null': '`tick'}\n","json":{"!bang":255670,"it's":"+1","%pct":{"+1":{"beta":"- item"},"x":["on"],"# hash":{"no":"0x1F","&anchor":202.0}},"null":"`tick"}}
+{"yaml":"'0b101':\n  :colon:\n  - -640.578\n'0x1F': null\n'on':\n  '@at': true\n  x: :colon\n  '5.': false\n'- item':\n  gamma: '%pct'\n  beta:\n    it's: -115.764\n    http://example.org/a#frag: ''\n  'true': http://example.org/a#frag\n","json":{"0b101":{":colon":[-640.578]},"0x1F":null,"on":{"@at":true,"x":":colon","5.":false},"- item":{"gamma":"%pct","beta":{"it's":-115.764,"http://example.org/a#frag":""},"true":"http://example.org/a#frag"}}}
+{"yaml":"a|b:\n- '0b101'\n'true': null\n","json":{"a|b":["0b101"],"true":null}}
+{"yaml":"{'%pct': 357.9, 'http://example.org/a#frag': 'FALSE'}\n","json":{"%pct":357.9,"http://example.org/a#frag":"FALSE"}}
+{"yaml":"'null':\n- 'Null'\n","json":{"null":["Null"]}}
+{"yaml":"'yes': 155567\ngamma:\n- -395.0\n- 926813\n'%pct': null\nключ:\n  alpha: null\n","json":{"yes":155567,"gamma":[-395.0,926813],"%pct":null,"ключ":{"alpha":null}}}
+{"yaml":"{'[x]': {'http://example.org/a#frag': 1.0e-05}}\n","json":{"[x]":{"http://example.org/a#frag":1e-05}}}
+{"yaml":"日本語:\n- -0.00425\n- null\n- false\n","json":{"日本語":[-0.00425,null,false]}}
+{"yaml":"'colon:':\n  '?': 830397\n  '.5':\n    '.5': '[x]'\n  '`tick': 123456789.125\n","json":{"colon:":{"?":830397,".5":{".5":"[x]"},"`tick":123456789.125}}}
+{"yaml":"{'a # b': '2026-10-31'}\n","json":{"a # b":"2026-10-31"}}
+{"yaml":"'@at': 'on'\n","json":{"@at":"on"}}
+{"yaml":"ключ: -324.926\nk50: '# hash'\n","json":{"ключ":-324.926,"k50":"# hash"}}
+{"yaml":"{'&anchor': false}\n","json":{"&anchor":false}}
+{"yaml":"'{y}': 100.0\n'`tick':\n- 461557\n'123':\n- 日本語\n- 123456789.125\n'0x1F': -251795\n","json":{"{y}":100.0,"`tick":[461557],"123":["日本語",123456789.125],"0x1F":-251795}}
+{"yaml":"'# hash':\n  x:\n  - '# hash'\n  - true\n  - -736467\n  '`tick':\n  - 392821\n  '-1':\n  - -0.00425\n'%pct':\n- -984.8\n- -435028\n- 1.0e-05\n'Null': -163246\nbeta:\n- 'false'\n","json":{"# hash":{"x":["# hash",true,-736467],"`tick":[392821],"-1":[-0.00425]},"%pct":[-984.8,-435028,1e-05],"Null":-163246,"beta":["false"]}}
+{"yaml":"{'no': {'%pct': {größe: 1.0e-05, '[x]': 518.090146}, '0x1F': true, 'a,b': {'~': -643812, x: 1.5e+20}}, 'true': [{'?': ':colon'}, 'NULL'], delta: [{'FALSE': '{y}'}, -94.3], ключ: -0.00425}\n","json":{"no":{"%pct":{"größe":1e-05,"[x]":518.090146},"0x1F":true,"a,b":{"~":-643812,"x":1.5e+20}},"true":[{"?":":colon"},"NULL"],"delta":[{"FALSE":"{y}"},-94.3],"ключ":-0.00425}}
+{"yaml":"'!bang': -911422\n'{y}':\n    '123':\n    - 123456789.125\n    '.5': http://example.org/a#frag\n    'true': 957.0\n'&anchor':\n- 589.0\n- true\n- '%pct'\n","json":{"!bang":-911422,"{y}":{"123":[123456789.125],".5":"http://example.org/a#frag","true":957.0},"&anchor":[589.0,true,"%pct"]}}
+{"yaml":"'5.':\n  '# hash':\n    'True': with space\n    '123': 'Null'\n'true': 868.45358\nключ:\n  'off':\n    alpha: 68.0\n    '*alias': 'a: b'\n  größe:\n  - -272910\n  'FALSE': 2.5e-07\n","json":{"5.":{"# hash":{"True":"with space","123":"Null"}},"true":868.45358,"ключ":{"off":{"alpha":68.0,"*alias":"a: b"},"größe":[-272910],"FALSE":2.5e-07}}}
+{"yaml":"{'.5': 'a: b'}\n","json":{".5":"a: b"}}
+{"yaml":"'2026-10-31':\n- -861560\n- -472415\n- -527338\n'%pct':\n- 586839\n- false\n- 284.529\nx:\n- 日本語\n","json":{"2026-10-31":[-861560,-472415,-527338],"%pct":[586839,false,284.529],"x":["日本語"]}}
+{"yaml":"'&anchor':\n- http://example.org/a#frag\n- 182.7\ndelta:\n    '?':\n        '1.5': -91324\n        '&anchor': -935733\n        '1_000': -828.0\n    '0x1F':\n    - -227.341545\n    - x\n    - 748.627535\n'null':\n- 2.5e-07\n- true\n- -0.00425\n'FALSE':\n    it's:\n        'colon:': -338.011385\n        '?': 100.0\n        größe: gamma\n    '&anchor': '0b101'\n","json":{"&anchor":["http://example.org/a#frag",182.7],"delta":{"?":{"1.5":-91324,"&anchor":-935733,"1_000":-828.0},"0x1F":[-227.341545,"x",748.627535]},"null":[2.5e-07,true,-0.00425],"FALSE":{"it's":{"colon:":-338.011385,"?":100.0,"größe":"gamma"},"&anchor":"0b101"}}}
+{"yaml":"{say \"hi\": null, '&anchor': [[-0.00425, -621110, 793.6], 72287]}\n","json":{"say \"hi\"":null,"&anchor":[[-0.00425,-621110,793.6],72287]}}
+{"yaml":"http://example.org/a#frag:\n  '+1': 'yes'\n  'true':\n  - 1.5e+20\n  - ' lead'\n'a: b':\n  'true': -520.8\n  'FALSE':\n  - -0.00425\n  - -568349\n  - '~'\n  '&anchor': 2.5e-07\n'5.':\n  '-1': -0.00425\n  '0x1F':\n    delta: 144005\n    '5.': 988130\n    '@at': 45823\n","json":{"http://example.org/a#frag":{"+1":"yes","true":[1.5e+20," lead"]},"a: b":{"true":-520.8,"FALSE":[-0.00425,-568349,"~"],"&anchor":2.5e-07},"5.":{"-1":-0.00425,"0x1F":{"delta":144005,"5.":988130,"@at":45823}}}}
+{"yaml":"http://example.org/a#frag:\n- null\n- 2.5e-07\n'a: b':\n- 497441\n- 654579\n- '1.5'\nsay \"hi\":\n- false\n- '&anchor'\n- 123456789.125\n","json":{"http://example.org/a#frag":[null,2.5e-07],"a: b":[497441,654579,"1.5"],"say \"hi\"":[false,"&anchor",123456789.125]}}
+{"yaml":"{naïve: [null, beta, [514.212]]}\n","json":{"naïve":[null,"beta",[514.212]]}}
+{"yaml":"'on':\n  a|b:\n  - -975374\n  'off':\n  - '123'\n  - delta\n  '?':\n  - 123456789.125\n  - 1037\ndelta: 685352\n'colon:':\n  '5.':\n  - null\n  alpha:\n    '@at': 579.073361\n    '~': '-1'\n    '0x1F': beta\n","json":{"on":{"a|b":[-975374],"off":["123","delta"],"?":[123456789.125,1037]},"delta":685352,"colon:":{"5.":[null],"alpha":{"@at":579.073361,"~":"-1","0x1F":"beta"}}}}
+{"yaml":"'12:30': true\n'Null': 131.97\nключ:\n- 811.214\n","json":{"12:30":true,"Null":131.97,"ключ":[811.214]}}
+{"yaml":"{x: {naïve: '1.5', delta: 1.5e+20}, 'NULL': '.5'}\n","json":{"x":{"naïve":"1.5","delta":1.5e+20},"NULL":".5"}}
+{"yaml":"'a: b':\n  'true': '.5'\nit's: 2.5e-07\n'1_000':\n- '5.'\n'12:30':\n  -dash:\n  - true\n  - 1.0e-05\n  - 1.5e+20\n","json":{"a: b":{"true":".5"},"it's":2.5e-07,"1_000":["5."],"12:30":{"-dash":[true,1e-05,1.5e+20]}}}
+{"yaml":"gamma: -133670\n","json":{"gamma":-133670}}
+{"yaml":"{日本語: {'&anchor': 943.167, '5.': {x: 0.1}}, 'off': [[delta], -28.0], naïve: 'colon:', 'a # b': [-343463, [null, '+1', 1.0e-05]]}\n","json":{"日本語":{"&anchor":943.167,"5.":{"x":0.1}},"off":[["delta"],-28.0],"naïve":"colon:","a # b":[-343463,[null,"+1",1e-05]]}}
+{"yaml":"'false':\n- it's\n- -88598\n- 2.5e-07\n","json":{"false":["it's",-88598,2.5e-07]}}
+{"yaml":"contract: x\nclass: invoice\ncorpus: golden/x\nmetrics:\n  field_exact_match:\n    amount: {min: 0.995, coverage: 0.95}\ngates:\n  regression_budget_cer_rel: 0.02\n","json":{"contract":"x","class":"invoice","corpus":"golden/x","metrics":{"field_exact_match":{"amount":{"min":0.995,"coverage":0.95}}},"gates":{"regression_budget_cer_rel":0.02}}}
+{"yaml":"a: 1\nb: [1, 2, {c: d}]\nc:\n  - x\n  - y\n# comment\nd: 'it''s'\ne: \"tab\\there\"\n","json":{"a":1,"b":[1,2,{"c":"d"}],"c":["x","y"],"d":"it's","e":"tab\there"}}
+{"yaml":"---\nk: v\n","json":{"k":"v"}}
+{"yaml":"- 1\n- two\n- [3, 4]\n","json":[1,"two",[3,4]]}
+{"yaml":"empty:\nlist: []\nmap: {}\nnull_value: null\ntilde: ~\n","json":{"empty":null,"list":[],"map":{},"null_value":null,"tilde":null}}

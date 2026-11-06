@@ -1,0 +1,87 @@
+# Wanjiru System: workspace manifest.
+#
+# Layering (L0 to L5) is enforced by `cargo xtask check-layers`; the layer of every crate is declared
+# once, in tools/xtask/src/layers.rs. Every crate directory carries a CONTRACT.md, and
+# `cargo xtask check-contracts` keeps it and this manifest in agreement.
+
+[workspace]
+resolver = "3"
+members = ["crates/*", "tools/xtask"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "Apache-2.0"
+publish = false
+authors = ["The Wanjiru System authors"]
+
+[workspace.dependencies]
+# Internal crates are referenced by path only. An external crate is added here, with a stated reason,
+# only after the CONTRACT.md of the crate that uses it lists it and `cargo xtask licences` passes.
+wanjiru-types = { path = "crates/wanjiru-types", version = "0.1.0" }
+wanjiru-math = { path = "crates/wanjiru-math", version = "0.1.0" }
+wanjiru-docir = { path = "crates/wanjiru-docir", version = "0.1.0" }
+wanjiru-simd = { path = "crates/wanjiru-simd", version = "0.1.0" }
+wanjiru-imgproc = { path = "crates/wanjiru-imgproc", version = "0.1.0" }
+wanjiru-codecs = { path = "crates/wanjiru-codecs", version = "0.1.0" }
+wanjiru-pdf = { path = "crates/wanjiru-pdf", version = "0.1.0" }
+wanjiru-barcode = { path = "crates/wanjiru-barcode", version = "0.1.0" }
+wanjiru-runtime = { path = "crates/wanjiru-runtime", version = "0.1.0" }
+wanjiru-models = { path = "crates/wanjiru-models", version = "0.1.0" }
+wanjiru-detect = { path = "crates/wanjiru-detect", version = "0.1.0" }
+wanjiru-recognize = { path = "crates/wanjiru-recognize", version = "0.1.0" }
+wanjiru-decode = { path = "crates/wanjiru-decode", version = "0.1.0" }
+wanjiru-fields = { path = "crates/wanjiru-fields", version = "0.1.0" }
+wanjiru-layout = { path = "crates/wanjiru-layout", version = "0.1.0" }
+wanjiru-calibrate = { path = "crates/wanjiru-calibrate", version = "0.1.0" }
+wanjiru-engine = { path = "crates/wanjiru-engine", version = "0.1.0" }
+wanjiru-emit = { path = "crates/wanjiru-emit", version = "0.1.0" }
+wanjiru-eval = { path = "crates/wanjiru-eval", version = "0.1.0" }
+wanjiru = { path = "crates/wanjiru", version = "0.1.0" }
+wanjiru-ffi = { path = "crates/wanjiru-ffi", version = "0.1.0" }
+wanjiru-cli = { path = "crates/wanjiru-cli", version = "0.1.0" }
+wanjiru-worker = { path = "crates/wanjiru-worker", version = "0.1.0" }
+wanjiru-server = { path = "crates/wanjiru-server", version = "0.1.0" }
+wanjiru-py = { path = "crates/wanjiru-py", version = "0.1.0" }
+
+[workspace.lints.rust]
+# Crates that are not unsafe zones also say `#![forbid(unsafe_code)]` in their root file; the unsafe
+# zones (simd, ffi, runtime, codecs, pdf, worker) allow it per module, each block with a SAFETY comment.
+unsafe_code = "deny"
+missing_docs = "warn"
+rust_2018_idioms = { level = "warn", priority = -1 }
+unused_lifetimes = "warn"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+# Untrusted input is parsed here: no unwrap in library code, no leftover debugging.
+unwrap_used = "deny"
+dbg_macro = "deny"
+todo = "deny"
+unimplemented = "deny"
+# Libraries never print; the CLI says so explicitly where it does.
+print_stdout = "warn"
+print_stderr = "warn"
+# Relaxed pedantic lints, each with a reason (see docs/adr/007-unsafe-and-dependency-policy.md).
+module_name_repetitions = "allow"   # wanjiru_eval::eval_report would be worse
+must_use_candidate = "allow"        # noisy on small pure functions
+missing_errors_doc = "allow"        # errors are specified once, in CONTRACT.md
+missing_panics_doc = "allow"        # panics are not permitted in library paths; see CONTRACT.md
+cast_precision_loss = "allow"       # usize to f64 for statistics is intended; counts stay below 2^53
+
+[profile.dev]
+debug = "line-tables-only"
+
+[profile.test]
+# Statistical simulations run in the default test run; optimisation keeps them within seconds.
+opt-level = 2
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+debug = "line-tables-only"
+# Untrusted input: arithmetic overflow is a bug, not a wrap. Phase 10 may revisit with measurements.
+overflow-checks = true

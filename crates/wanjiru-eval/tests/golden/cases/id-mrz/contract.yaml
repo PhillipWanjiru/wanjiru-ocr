@@ -1,0 +1,13 @@
+contract: id-oracle
+class: id
+status: draft
+corpus: golden/id-oracle
+metrics:
+  field_exact_match:
+    mrz: {min: 0.999, coverage: 0.9}
+    document_number: {kind: text, min: 0.99, coverage: 0.9}
+  ece_char: {max: 0.02}
+  conformal: {alpha: 0.01, coverage_tolerance: 0.01}
+  latency_ms: {p95_max: 3000}
+gates:
+  confidence_interval: bootstrap-by-document

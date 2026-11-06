@@ -1,0 +1,18 @@
+[package]
+name = "wanjiru-layout"
+description = "Regions, reading order, tables and key-value pairs"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+authors.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+wanjiru-types = { workspace = true }
+wanjiru-math = { workspace = true }
+wanjiru-docir = { workspace = true }
+wanjiru-imgproc = { workspace = true }

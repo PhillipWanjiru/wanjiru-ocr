@@ -1,0 +1,3 @@
+[alias]
+# `cargo xtask check` runs the layer, contract and unsafe checks; see tools/xtask.
+xtask = "run --quiet --package xtask --"

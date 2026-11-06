@@ -1,0 +1,26 @@
+$ wanjiru eval --contract eval/contracts/receipt-fields-v1.yaml --truth eval/fixtures/synthetic-v0/truth.jsonl --pred eval/fixtures/synthetic-v0/predictions.jsonl --baseline eval/fixtures/synthetic-v0/baseline.jsonl
+# exit code 1
+
+wanjiru eval: receipt-fields-v1 (draft), corpus golden/receipts-v0
+documents: 100 of class receipt, 100 with output, baseline has output for 100
+intervals: 95.0 %, bootstrap-t, 2000 resamples, seed 1
+
+character error rate: 0.0410 [0.0326, 0.0540] (304 edits / 7409 characters, 100 documents)
+field date (date): accuracy 0.8714 [0.7699, 0.9395] (61/70), coverage 0.7447 [0.6443, 0.8291] (70/94); reviewed 20, absent 4, accepted invalid 4, accepted without truth 0
+field total (amount): accuracy 0.8750 [0.7821, 0.9384] (70/80), coverage 0.8333 [0.7435, 0.9016] (80/96); reviewed 14, absent 2, accepted invalid 2, accepted without truth 0
+latency ms: p50 538.2 [502.5, 591.5], p95 1038.1 [880.7, 1821.3] (n = 100)
+change in errors against the baseline: 6.0698 [3.5478, 10.0938] (304 edits against 43)
+
+gates:
+  fail          field_exact_match.date.min                 >= 0.9900    0.8714 [0.7699, 0.9395]
+  fail          field_exact_match.date.coverage            >= 0.9000    0.7447 [0.6443, 0.8291]
+  fail          field_exact_match.total.min                >= 0.9900    0.8750 [0.7821, 0.9384]
+  inconclusive  field_exact_match.total.coverage           >= 0.9000    0.8333 [0.7435, 0.9016]
+  not_measured  ece_char.max                               <= 0.0300    n/a [-inf, +inf]  (calibration of character confidences is measured from Phase 6)
+  not_measured  conformal.coverage                         >= 0.9600    n/a [-inf, +inf]  (conformal coverage is measured from Phase 6)
+  pass          latency_ms.p50_max                         <= 800.0000  538.2150 [502.5000, 591.4800]
+  pass          latency_ms.p95_max                         <= 2000.0000 1038.0930 [880.7400, 1821.3400]
+  fail          gates.regression_budget_cer_rel            <= 0.0300    6.0698 [3.5478, 10.0938]
+
+verdict: fail
+report sha256: 5fa7c690502df06ca80eb04b0457c89bb34516b89ae473c5b18e2e73eac08d56

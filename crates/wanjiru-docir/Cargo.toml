@@ -1,0 +1,16 @@
+[package]
+name = "wanjiru-docir"
+description = "DocIR: the document model, its JSON Schema, transform chains and canonical JSON"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+authors.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+wanjiru-types = { workspace = true }
+wanjiru-math = { workspace = true }

@@ -1,0 +1,16 @@
+# Quality contract for till receipts. PROPOSED thresholds: receipts are noisier than invoices, so the
+# error budgets are looser and latency tighter; confirm or change them at gate G1 (week 18).
+contract: receipt-fields-v1
+class: receipt
+status: draft
+corpus: golden/receipts-v0
+metrics:
+  field_exact_match:
+    total: {kind: amount, min: 0.99, coverage: 0.90}
+    date:  {kind: date,   min: 0.99, coverage: 0.90}
+  ece_char: {max: 0.03}             # measured from Phase 6
+  conformal: {alpha: 0.02, coverage_tolerance: 0.02}   # measured from Phase 6
+  latency_ms: {p50_max: 800, p95_max: 2000}
+gates:
+  regression_budget_cer_rel: 0.03
+  confidence_interval: bootstrap-by-document
