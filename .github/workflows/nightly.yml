@@ -32,7 +32,7 @@ jobs:
         run: |
           set -o pipefail
           cargo test --release -p wanjiru-eval --test coverage --locked -- --ignored --nocapture | tee coverage-survey.txt
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: coverage-survey
           path: coverage-survey.txt
