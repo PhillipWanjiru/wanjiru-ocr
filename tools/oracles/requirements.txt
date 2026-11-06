@@ -1,7 +1,7 @@
 # The versions the committed golden vectors were last regenerated with (Python 3.13; Node 22 for jcs.js).
 # The vectors are committed so that the Rust tests need none of this; these pins exist so that the nightly
 # job and a person regenerating them get the same files. Raise a pin on purpose, regenerate, and read the diff.
-numpy==2.5.3
+numpy==2.5.4
 scipy==1.18.1
 jsonschema==4.26.0
 PyYAML==6.0.3
